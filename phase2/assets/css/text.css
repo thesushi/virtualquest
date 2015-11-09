@@ -9,7 +9,7 @@
 ----------------------------------------------------------------------------------------------------*/
 
 body {
-  font: 13px/1.5 'Roboto', Arial, sans-serif;
+  font: 13px/1.5 'NettoOT', Arial, sans-serif;
 }
 
 hr {
@@ -45,7 +45,16 @@ h5 {
 h6 {
   font-size: 15px;
 }
-
+.alternate {
+  
+  font-family: 'MasonSansAlternate', Arial, sans-serif;
+}
+.regular {
+  font-family: 'MasonSans', Arial, sans-serif;
+}
+.big {
+  font-size: 50px;
+}
 /* `Spacing
 ----------------------------------------------------------------------------------------------------*/
 

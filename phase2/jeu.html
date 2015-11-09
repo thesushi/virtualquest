@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="assets/img/logo.png" />
         <meta name="description" content="Jeu sérieux dans le cadre du projet e-c@thedral"/>
-            <script property="stylesheet" rel="stylesheet" src="assets/css/jquery-ui.min.css"></script>
     </head>
 <body>
     <!-- debut container -->
@@ -14,33 +13,34 @@
         <!-- debut header -->
         <header id="header">
         <!-- header avec logo -->
-           
-            <div class="grid_12">
-                <img class="half" src="assets/img/bandeau_fond_alpha.png" />
+            <div class="grid_2">
+                <div id="logo">
+                   <h1> Accueil </h1>
+                </div>
             </div>
-                
+            <div class="grid_6">
+                <img class="imgHeader" src="assets/img/bandeau_fond_alpha.png" />
+            </div>
+            <div class="grid_4">
+                <nav class="top-search">
+                    <div> Points </div>
+                    <div> Aide </div>
+                </nav>
+            </div>           
         </header>
-        <!-- fin header -->        
+        <!-- fin header -->         
         <!-- debut main -->
         <main>
-        <div id="infosMainScreen">
-        	<h1 class="regular big"> Mais qui est qui ?</h1>
-        	<p> Mène l'enquête au Moyen Age...</p>
-        	<p> Sauras-tu retrouver quel est le personnage que la statue de la Vierge dorée a remplacé ? </p>
-        	<span id="timer"> Chargement dans ... 5 </span>
-        </div>
                   
      
             <!-- fin div generale -->
         </main>
-    </div>
+           </div>
 
-	<link property="stylesheet" rel="stylesheet" href="assets/css/reset.css" />
     <link property="stylesheet" rel="stylesheet" href="assets/css/custom.css" />
+    <link property="stylesheet" rel="stylesheet" href="assets/css/reset.css" />
     <link property="stylesheet" rel="stylesheet" href="assets/css/text.css" />
-     <!-- css bootstrap -->
-    <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+
 
     <noscript>
         <link property="stylesheet"  rel="stylesheet" href="assets/css/mobile.min.css" />
@@ -68,28 +68,8 @@
             ]
         };
     </script>
-    <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-    var zone = $("#timer");
-    function less(cpt) {
-   			setTimeout(function(){
-   			  cpt--;
-			  zone.html("Chargement dans ... " + cpt);
-			  if (cpt > 0) {
-			  	less(cpt);
-			  } else {
-			  	var text = "<h1 class=' alternate big'> Bienvenue dans la loge des bâtisseursdu portail sud </h1> <p> Au moyen Âge, ce n’est pas la statue de la Vierge Dorée qui ornait ce portail. </p> <p> Alors es-tu prêt pour une chasse aux trésors qui permettra de connaitre la statue du trumeau. A toi de mener l’enquête afin de trouver les indices qui te permettront de retrouver l’identité de ce mystérieux personnage. <br> <br> <button class='btn btn-default btn-lg' onclick='window.location.href=\"jeu.html\"' role='button'>En route pour l'aventure !</button> </p>";
-			  	$("#infosMainScreen").html(text);
-			  }
-			}, 1000);
-   	}
-    $( document ).ready(function() {
-    	zone = $("#timer");
-   		less(5);
-	});
-    
-    </script>
 </body>
 </html>
