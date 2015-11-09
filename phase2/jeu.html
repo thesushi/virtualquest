@@ -6,42 +6,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="assets/img/logo.png" />
         <meta name="description" content="Jeu sérieux dans le cadre du projet e-c@thedral"/>
+        <script property="stylesheet" rel="stylesheet" src="assets/css/jquery-ui.min.css"></script>
     </head>
 <body>
     <!-- debut container -->
-    <div class="container_12" >
+    <div class="container_12" id="wrapper">
         <!-- debut header -->
         <header id="header">
         <!-- header avec logo -->
-            <div class="grid_2">
-                <div id="logo">
-                   <h1> Accueil </h1>
+            <div class="grid_12" >
+                <div class="grid_5 left">
+                    <h3 class="alternate"> Accueil </h3>
                 </div>
-            </div>
-            <div class="grid_6">
-                <img class="imgHeader" src="assets/img/bandeau_fond_alpha.png" />
-            </div>
-            <div class="grid_4">
-                <nav class="top-search">
-                    <div> Points </div>
-                    <div> Aide </div>
-                </nav>
+                <div class="grid_6 right">
+                    <a href="#"> <img class="uiButton" src="assets/img/btn_points_0.png"> </a>
+                    <a href="#"> <img class="uiButton" src="assets/img/btn_aide.png"> </a>
+                </div>
             </div>           
         </header>
         <!-- fin header -->         
         <!-- debut main -->
-        <main>
-                  
+        <main class="margin_top_10">
+            <div class="grid_8 panotour">
+            </div>
+
+            <div class="grid_4 enigmeBox">
+            </div>
      
             <!-- fin div generale -->
         </main>
-           </div>
+    </div>
 
     <link property="stylesheet" rel="stylesheet" href="assets/css/custom.css" />
     <link property="stylesheet" rel="stylesheet" href="assets/css/reset.css" />
     <link property="stylesheet" rel="stylesheet" href="assets/css/text.css" />
-
-
+     <!-- css bootstrap -->
+    <link property="stylesheet" href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link property="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
     <noscript>
         <link property="stylesheet"  rel="stylesheet" href="assets/css/mobile.min.css" />
     </noscript>
@@ -68,7 +69,7 @@
             ]
         };
     </script>
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
 </body>

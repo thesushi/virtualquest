@@ -46,8 +46,8 @@ h6 {
   font-size: 15px;
 }
 .alternate {
-  
   font-family: 'MasonSansAlternate', Arial, sans-serif;
+  color: #6B4A15;
 }
 .regular {
   font-family: 'MasonSans', Arial, sans-serif;
@@ -55,6 +55,7 @@ h6 {
 .big {
   font-size: 50px;
 }
+
 /* `Spacing
 ----------------------------------------------------------------------------------------------------*/
 
