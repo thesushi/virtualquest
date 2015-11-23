@@ -1,18 +1,22 @@
 $( document ).ready(function() {
     $('.aventure').css('display', 'block');
     $("#talkbubble").hide();
-    
-
+        if (localStorage.getItem('ecathedrale-isStarted') == null) {
+            //debut du  jeu
+             $("#modal1").modal('show');
+             localStorage.setItem('ecathedrale-isStarted', true);
+        }
         if(localStorage.getItem("ecathedrale-enigme") !== null && localStorage.getItem("ecathedrale-etat") !== null){
-
             
             if(localStorage.getItem("ecathedrale-etat") == "endFail" || localStorage.getItem("ecathedrale-etat") == "endWin"){
                 afficherIntersticielFin();
             }
             else if(localStorage.getItem("ecathedrale-etat") == "chercher"){
+
                 chercherEnigme(localStorage.getItem("ecathedrale-enigme"));
 
             }else{
+
                 startStep(localStorage.getItem("ecathedrale-enigme"));
             }
 
@@ -21,13 +25,6 @@ $( document ).ready(function() {
         if(localStorage.getItem("ecathedrale-indice") !== null){
             writeIndice(localStorage.getItem("ecathedrale-indice"));
         }
-
-        //Masquer l'intersticiel lors du click sur le bouton démarrer
-        $('#start').on('click', function() {
-        
-            chercherEnigme(1,false);
-        });
-
 
         function afficherIntersticielFin(){
             if(localStorage.getItem("ecathedrale-etat") == "endWin") {
@@ -45,6 +42,7 @@ $( document ).ready(function() {
             localStorage.removeItem("ecathedrale-enigme");
             localStorage.removeItem("ecathedrale-etat");
             localStorage.removeItem("ecathedrale-indice");
+            localStorage.removeItem("ecathedrale-isStarted");
             location.reload(true);
         });
 
@@ -52,12 +50,13 @@ $( document ).ready(function() {
             localStorage.removeItem("ecathedrale-enigme");
             localStorage.removeItem("ecathedrale-etat");
             localStorage.removeItem("ecathedrale-indice");
+             localStorage.removeItem("ecathedrale-isStarted");
             location.reload(true);
         });
 
 
         function writeIndice(indice){
-            $('.indiceBox').text(indice);
+            $('#indices').text(indice);
             localStorage.setItem("ecathedrale-indice",indice);
         }
 
@@ -96,7 +95,7 @@ $( document ).ready(function() {
                 console.log('Cette énigme n\'est pas encore accessible à l\'utilisateur ...');
         }
 
-        function chercherEnigme(number,modal){
+        function chercherEnigme(number, modal){
             if(parseInt(number) > 1) {
             $('.barreEnigme').html('<p>Pour trouver la prochaine énigme :</p>');
             localStorage.setItem('ecathedrale-enigme', number);

@@ -32,12 +32,17 @@
 	font-size: 21px;
     margin-bottom: 15px;
 }
+.barreIndice {
+    font-family: 'MasonSansAlternate';
+    font-size: 21px;
+    padding: 10px;
+}
 
 .aventure{
     display:none;
 }
 .modal-title{
-    font-family: 'NettoOT', cursive;
+    font-family: 'MasonSansAlternate';
     color: rgb(86, 57, 14);
     font-size: 25px;
     font-weight: bold;
@@ -58,7 +63,7 @@
 
 .title{
     padding-top: 50px;
-    font-family: 'NettoOT', cursive;
+    font-family: 'MasonSansAlternate';
     color: rgb(86, 57, 14);
     font-size: 5em;
 }
