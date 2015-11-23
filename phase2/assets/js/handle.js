@@ -2,29 +2,29 @@ $( document ).ready(function() {
     $('.aventure').css('display', 'block');
     $("#talkbubble").hide();
 
-        if(localStorage.getItem("ecathedrale-enigme") !== null && localStorage.getItem("ecathedrale-etat") !== null){
+        if(localStorage.getItem("virtualQuest-enigme") !== null && localStorage.getItem("virtualQuest-state") !== null){
       
-            if(localStorage.getItem("ecathedrale-etat") == "endFail" || localStorage.getItem("ecathedrale-etat") == "endWin"){
+            if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
                 afficherIntersticielFin();
             }
-            else if(localStorage.getItem("ecathedrale-etat") == "chercher"){
+            else if(localStorage.getItem("virtualQuest-state") == "chercher"){
 
-                chercherEnigme(localStorage.getItem("ecathedrale-enigme"));
+                nouvelleEnigme(localStorage.getItem("virtualQuest-enigme"));
             }else{
 
-                startStep(localStorage.getItem("ecathedrale-enigme"));
+                debutEnigme(localStorage.getItem("virtualQuest-enigme"));
             }
 
         }
 
-        if (localStorage.getItem('ecathedrale-isStarted') == null) {
+        if (localStorage.getItem('virtualQuest-isStarted') == null) {
             //debut du  jeu
-             chercherEnigme(1, true);
-             localStorage.setItem('ecathedrale-isStarted', true);
+             nouvelleEnigme(1, true);
+             localStorage.setItem('virtualQuest-isStarted', true);
         }
 
-        if(localStorage.getItem("ecathedrale-indice") !== null){
-            writeIndice(localStorage.getItem("ecathedrale-indice"));
+        if(localStorage.getItem("virtualQuest-indice") !== null){
+            writeIndice(localStorage.getItem("virtualQuest-indice"));
         }
 
 
@@ -32,37 +32,37 @@ $( document ).ready(function() {
         $('#endLost').click(afficherIntersticielFin);
 
         $("#restartWin").on('click', function(){
-            localStorage.removeItem("ecathedrale-enigme");
-            localStorage.removeItem("ecathedrale-etat");
-            localStorage.removeItem("ecathedrale-indice");
-            localStorage.removeItem("ecathedrale-isStarted");
+            localStorage.removeItem("virtualQuest-enigme");
+            localStorage.removeItem("virtualQuest-state");
+            localStorage.removeItem("virtualQuest-indice");
+            localStorage.removeItem("virtualQuest-isStarted");
             location.reload(true);
         });
 
         $("#restartLost").on('click', function(){
-            localStorage.removeItem("ecathedrale-enigme");
-            localStorage.removeItem("ecathedrale-etat");
-            localStorage.removeItem("ecathedrale-indice");
-             localStorage.removeItem("ecathedrale-isStarted");
+            localStorage.removeItem("virtualQuest-enigme");
+            localStorage.removeItem("virtualQuest-state");
+            localStorage.removeItem("virtualQuest-indice");
+             localStorage.removeItem("virtualQuest-isStarted");
             location.reload(true);
         });
 
     });
         function afficherIntersticielFin(){
-            if(localStorage.getItem("ecathedrale-etat") == "endWin") {
+            if(localStorage.getItem("virtualQuest-state") == "endWin") {
                 $('#endGame').css('display', 'block');
-            }else if(localStorage.getItem("ecathedrale-etat") == "endFail"){
+            }else if(localStorage.getItem("virtualQuest-state") == "endFail"){
                 $('#endGameLost').css('display', 'block');
             }
             $('.aventure').css('display', 'none');
         }
 
-        function chercherEnigme(number, modal){
+        function nouvelleEnigme(number, modal){
             if(parseInt(number) > 1) {
              $('.barreEnigme').html('<p>Pour trouver la prochaine énigme :</p>');
             }
-            localStorage.setItem('ecathedrale-enigme', number);
-            localStorage.setItem('ecathedrale-etat', 'chercher');
+            localStorage.setItem('virtualQuest-enigme', number);
+            localStorage.setItem('virtualQuest-state', 'chercher');
             $('#enigme'+number+' .enigme_info').removeClass('hidden');
             if(modal){
                 $("#modal"+number).modal("show");
@@ -75,13 +75,13 @@ $( document ).ready(function() {
 
         function writeIndice(indice){
             $('#indices').text(indice);
-            localStorage.setItem("ecathedrale-indice",indice);
+            localStorage.setItem("virtualQuest-indice",indice);
         }
 
-        function startStep(number){
+        function debutEnigme(number){
             console.log('Appel de l\'énigme n°'+number);
-            if(localStorage.getItem("ecathedrale-enigme") == number){
-                localStorage.setItem('ecathedrale-etat', 'resoudre');
+            if(localStorage.getItem("virtualQuest-enigme") == number){
+                localStorage.setItem('virtualQuest-state', 'resoudre');
                 $('.barreEnigme').html('<p>Énigme '+number+'</p>');
                 $('#enigme'+number+' .enigme_info').addClass('hidden');
                 $('#enigme'+number+' .enigme_content').removeClass('hidden');
@@ -109,8 +109,6 @@ $( document ).ready(function() {
                         break;
                 }
             }
-            else
-                console.log('Cette énigme n\'est pas encore accessible à l\'utilisateur ...');
         }
 
 
@@ -119,7 +117,6 @@ function enigme1() {
     letter_cases.disableSelection();
     letter_cases.children().disableSelection();
     $('.square_letter').disableSelection();
-
 
     $(".square_letter").droppable({
         drop: function(event,ui){
@@ -212,7 +209,7 @@ function enigme1() {
             }
 
             if($count == 6){
-                chercherEnigme(2,'showModal');
+                nouvelleEnigme(2,'showModal');
                 writeIndice('Evêque');
             }
         },
@@ -240,7 +237,7 @@ function enigme2(){
             $(this).css("background","red");
             if(nbr==0){
                 $(".nbR").html("BRAVO!");
-                chercherEnigme(3,'showModal');
+                nouvelleEnigme(3,'showModal');
                 writeIndice('évèque, 3');
             }
         }
@@ -273,7 +270,7 @@ function enigme3() {
             $('.indication').text('BRAVO !');
             $("#anges").css('display','none');
             $("#pano").show();
-            chercherEnigme(4,'showModal');
+            nouvelleEnigme(4,'showModal');
             writeIndice('évèque, 3 + 3');
         } else {
             $('.indication').text('Ce n\'est pas la bonne réponse. Essaye encore ...');
@@ -309,7 +306,7 @@ function enigme4(){
             correctCards++;
             console.log(correctCards);
             if(correctCards===4){
-                chercherEnigme(5,'showModal');
+                nouvelleEnigme(5,'showModal');
                 writeIndice('évèque, 3 + 3, Pain');
             }
         }
@@ -351,7 +348,7 @@ function enigme5(){
         console.log(userResponse);
         if (userResponse == response1){
             $('.indication').text('BRAVO !');
-            chercherEnigme(6,'showModal');
+            nouvelleEnigme(6,'showModal');
             writeIndice('évèque, 3 + 3, Pain, boulanger');
         }
         else{
@@ -390,7 +387,7 @@ function enigme6(){
         var userResponse = $('input[name="reponseEnigme6"]').val().toLowerCase();
         if (userResponse == reponse1 || userResponse == reponse2) {
             $('.indication').text('BRAVO !');
-            chercherEnigme(7,'showModal');
+            nouvelleEnigme(7,'showModal');
             writeIndice('évèque, 3 + 3, Pain, Saint');
         }else{
             $('.indication').text('Ce n\'est pas la bonne réponse. Essaye encore ...');
@@ -428,14 +425,14 @@ function enigme7() {
         if(bonnesReponses === 7){
             $("#modal9").modal("show");
             $("#modal9 .modal-body button").addClass("modalGagne");
-            localStorage.setItem('ecathedrale-etat', 'endWin');
+            localStorage.setItem('virtualQuest-state', 'endWin');
         }
     });
 }
 
 function derniereChance() {
     $("#modal10").modal("show");
-    localStorage.setItem('ecathedrale-etat', 'endFail');
+    localStorage.setItem('virtualQuest-state', 'endFail');
     $('.barreEnigme').html("C'est ta dernière chance ...");
     $('#enigme7 .enigme_content').addClass('hidden');
     $('#derniereChance .enigme_content').removeClass('hidden');
