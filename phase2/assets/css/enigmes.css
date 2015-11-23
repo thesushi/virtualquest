@@ -1,0 +1,164 @@
+.letters_div{
+    margin-top: 2px;
+    margin-bottom:2px;
+}
+.square_letter{
+	height : 70px;
+	background: #969696;
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
+    border : solid;
+    border-width : 1px;
+	/* float : none; */
+}
+
+.square_letter_to_pickup{
+    height : 70px;
+    background: #ebe87f;
+    color: #000000;
+    font-size: 40px;
+    font-weight: bold;
+    border : solid;
+    border-width : 1px;
+}
+
+.enigme {
+	font-family: 'NettoOT';
+    padding: 0;
+}
+.enigme .barreEnigme {
+	font-family: 'MasonSansAlternate';
+	font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.aventure{
+    display:none;
+}
+.modal-title{
+    font-family: 'NettoOT', cursive;
+    color: rgb(86, 57, 14);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.modal-body{
+    font-family: 'NettoOT', sans-serif;
+    color: #000;
+    font-size: 1.15em;
+}
+
+.btn{
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'NettoOT', sans-serif;
+    color: rgb(86, 57, 14);
+}
+
+.title{
+    padding-top: 50px;
+    font-family: 'NettoOT', cursive;
+    color: rgb(86, 57, 14);
+    font-size: 5em;
+}
+
+.teaser{
+    padding-top: 50px;
+    font-size: xx-large;
+    font-family: 'NettoOT', sans-serif;
+    color: rgb(86, 57, 14);
+}
+
+.aventure{
+    display:none;
+}
+
+.enigmes{
+    color: #222222;
+}
+
+.choice_letter{
+    font-size:4rem;
+    margin:auto;
+}
+
+.pendu{
+    font-size:2.5rem;
+    margin-bottom: 20px;
+}
+
+.pendu .letter{
+    padding-right: 0px;
+
+}
+
+.pendu .col-xs-1, .pendu .col-sm-1, .pendu .col-md-1{
+    width: 7%;
+}
+
+.choice_letter > .letter{
+    padding:0px;
+    text-align: center;
+    border: 1px solid #000000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#essaisRestant{
+    padding-left: 0px;
+    padding-top: 5%;
+    color: red;
+    font-weight: bolder;
+    font-size: 6rem;
+}
+
+#cardSlots, #cardPile {
+    padding: 5px;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#cardSlots div, #cardPile div {
+    width: 100%;
+    padding-bottom: 0;
+    border: 2px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    color : #000000;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+#cardPile div.correctCard {
+    background-color: lawngreen;
+}
+
+.GrilleEnigme2{
+    text-align: center;
+}
+
+.nbR{
+    margin-top: 20px;
+}
+
+input[name="reponseRebus"]{
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+input[name="reponseEnigme6"]{
+    margin-bottom: 20px;
+}
