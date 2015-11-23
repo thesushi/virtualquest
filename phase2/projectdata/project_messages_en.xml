@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[Nouveau projet]]></data>
+
+
+
+  <data name="en_pano11_title"><![CDATA[R0010196]]></data>
+  <data name="en_spotpoint74javascriptcalljsfunctioncall"><![CDATA[startStep(1)]]></data>
+
+
+  <data name="en_pano12_title"><![CDATA[R0010198]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

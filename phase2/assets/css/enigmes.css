@@ -27,6 +27,11 @@
 	font-family: 'NettoOT';
     padding: 0;
 }
+#indices {
+    font-family: 'NettoOT';
+    font-size: 16px;
+    padding: 10px;
+}
 .enigme .barreEnigme {
 	font-family: 'MasonSansAlternate';
 	font-size: 21px;

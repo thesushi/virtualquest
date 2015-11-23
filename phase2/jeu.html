@@ -26,7 +26,23 @@
         <!-- fin header -->         
         <!-- debut main -->
         <main class="margin_top_10">
-            <div class="grid_8 panotour">
+            <div class="grid_8 panotour" id="panoDIV">
+            <script type="text/javascript" src="projectdata/project.js"></script>
+                <script type="text/javascript">
+
+                    embedpano({
+
+                    xml:"projectdata/project.xml"
+
+                    ,target:"panoDIV"
+                    ,passQueryParameters:true
+
+                    ,html5:"only"
+
+
+                    });
+
+                </script>
             </div>
             <div class="grid_4 enigmeBox">
             <div class="enigme aventure">
@@ -34,7 +50,7 @@
                 <p>Énigme 1</p>
             </div>
                 <div id="enigme1" class="row enigmes">
-                    <div class="enigme_info col-md-12 ">
+                    <div class="enigme_info col-md-12 hidden">
                         <p>Pour trouver l'énigme 1, longe la nef jusqu'au <strong>centre de la cathédrale</strong>. Tu dois trouver la cathèdre qui se situe devant le grille de coeur.</p>
                         <p>La cathèdre est le siège où l'évêque préside les cérémonies.</p>
                     </div>
@@ -65,7 +81,8 @@
                 </div>
                 <div id="enigme2" class="row enigmes">
                     <div class="enigme_info col-md-12 hidden">
-                        <p>Dirige-toi vers le <strong>NORD</strong>.</p>
+                        <p>Dirige-toi vers le <strong>NORD</strong>.</p><p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="enigme_content hidden">
 
@@ -473,7 +490,8 @@
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/enigmes.js"></script>
-    <script type="text/javascript" src="assets/js/handle.js"></script>
+
+     <script type="text/javascript" src="assets/js/handle.js"></script>
+   
 </body>
 </html>
