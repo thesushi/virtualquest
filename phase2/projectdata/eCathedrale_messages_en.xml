@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[e-Cathedrale]]></data>
+
+
+
+  <data name="en_pano89_title"><![CDATA[N06-FN45Z1I01-Nef-central]]></data>
+
+
+  <data name="en_pano91_title"><![CDATA[N08-FO46Z1I01-ChapNord]]></data>
+  <data name="en_spotpoint253javascriptcalljsfunctioncall"><![CDATA[startStep(7)]]></data>
+
+
+  <data name="en_pano84_title"><![CDATA[N01-FM50Z1I01-Trans-Sud]]></data>
+  <data name="en_spotpoint251javascriptcalljsfunctioncall"><![CDATA[startStep(3)]]></data>
+
+
+  <data name="en_pano86_title"><![CDATA[N04-FN50Z1I01-Transept ouest]]></data>
+  <data name="en_spotpoint252javascriptcalljsfunctioncall"><![CDATA[startStep(6)]]></data>
+
+
+  <data name="en_pano87_title"><![CDATA[N04-TranseptNord-BD]]></data>
+  <data name="en_spotpoint248javascriptcalljsfunctioncall"><![CDATA[startStep(2)]]></data>
+
+
+  <data name="en_pano88_title"><![CDATA[N05-FN49Z1I01-Transept]]></data>
+  <data name="en_spotpoint244javascriptcalljsfunctioncall"><![CDATA[startStep(1)]]></data>
+  <data name="en_spotpoint245javascriptcalljsfunctioncall"><![CDATA[startStep(5)]]></data>
+
+
+  <data name="en_pano90_title"><![CDATA[N07-FN47Z1I01-Labyrinthe]]></data>
+  <data name="en_spotpoint210javascriptcalljsfunctioncall"><![CDATA[startStep(4)]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <data name="en_spotpoint253_description"><![CDATA[Enigme 7]]></data>
+
+
+
+  <data name="en_spotpoint251_description"><![CDATA[Enigme 3]]></data>
+
+
+
+
+
+
+  <data name="en_spotpoint248_description"><![CDATA[Enigme 2]]></data>
+
+
+
+  <data name="en_spotpoint244_description"><![CDATA[Enigme 1 : podium]]></data>
+  <data name="en_spotpoint245_description"><![CDATA[Enigme 5 : porte du coeur]]></data>
+
+
+
+  <data name="en_spotpoint210_description"><![CDATA[Enigme 4 : labyrinthe]]></data></krpano>

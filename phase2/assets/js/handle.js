@@ -5,7 +5,7 @@ $( document ).ready(function() {
         if(localStorage.getItem("virtualQuest-enigme") !== null && localStorage.getItem("virtualQuest-state") !== null){
       
             if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
-                afficherIntersticielFin();
+                end();
             }
             else if(localStorage.getItem("virtualQuest-state") == "chercher"){
 
@@ -28,33 +28,27 @@ $( document ).ready(function() {
         }
 
 
-        $('#endWin').click(afficherIntersticielFin);
-        $('#endLost').click(afficherIntersticielFin);
+        $('#refreshReset').click(reset);
+        $('.endButton').click(end);
 
-        $("#restartWin").on('click', function(){
-            localStorage.removeItem("virtualQuest-enigme");
-            localStorage.removeItem("virtualQuest-state");
-            localStorage.removeItem("virtualQuest-indice");
-            localStorage.removeItem("virtualQuest-isStarted");
-            location.reload(true);
-        });
+    });
 
-        $("#restartLost").on('click', function(){
-            localStorage.removeItem("virtualQuest-enigme");
+function reset() {
+             localStorage.removeItem("virtualQuest-enigme");
             localStorage.removeItem("virtualQuest-state");
             localStorage.removeItem("virtualQuest-indice");
              localStorage.removeItem("virtualQuest-isStarted");
-            location.reload(true);
-        });
+             localStorage.removeItem("virtualQuest-stateFail");
+             document.location.href="index.html"
 
-    });
-        function afficherIntersticielFin(){
+    }
+        function end(){
             if(localStorage.getItem("virtualQuest-state") == "endWin") {
-                $('#endGame').css('display', 'block');
+                document.location.href="goodEnd.html"
             }else if(localStorage.getItem("virtualQuest-state") == "endFail"){
-                $('#endGameLost').css('display', 'block');
+                document.location.href="badEnd.html"
             }
-            $('.aventure').css('display', 'none');
+            $('#main').css('display', 'none');
         }
 
         function nouvelleEnigme(number, modal){
@@ -77,7 +71,9 @@ $( document ).ready(function() {
             $('#indices').text(indice);
             localStorage.setItem("virtualQuest-indice",indice);
         }
-
+        function startStep(number){
+            debutEnigme(number);
+        }
         function debutEnigme(number){
             console.log('Appel de l\'énigme n°'+number);
             if(localStorage.getItem("virtualQuest-enigme") == number){
@@ -224,17 +220,18 @@ function enigme1() {
  * */
 function enigme2(){
     var nbr=11;
-    $("#enigme2 .enigme_content").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='GrilleEnigme2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>R</td><td>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>R</td><td>B</td><td>B</td><td>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>R</td><td>B</td></tr><tr><td>B</td><td>R</td><td>B</td><td>B</td><td>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>R</td><td>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/><div class='nbR col-md-12'>Il reste 11 R à trouver. </span>");
+    $("#enigme2 .enigme_content").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='GrilleEnigme2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/><div class='nbR col-md-12'>Il reste 11 R à trouver. </span>");
 
     $(".enigmes .GrilleEnigme2 td").on('click',function(){
 
         var lettre=$(this).text();
         var css=$(this).css('background-color');
 
-        if ((lettre =='R') && (css!='rgb(255, 0, 0)')){
+        if ((lettre =='R') && (css!='rgb(255, 0, 0)') && $(this).hasClass('clickR')){
             nbr--;
             $(".nbR").html("il reste "+nbr+" R à trouver. ");
-            $(this).css("background","red");
+            $(this).removeClass('clickR');
+            $(this).css("background", "LawnGreen");
             if(nbr==0){
                 $(".nbR").html("BRAVO!");
                 nouvelleEnigme(3,'showModal');
@@ -336,9 +333,9 @@ function enigme5(){
         "<p class='col-md-12 col-xs-12 col-sm-12'>Sauras-tu résoudre ce rébus pour trouver le quatrième indice ?</p>" +
         "<p class='col-md-12'>À toi de jouer !</p>" +
         "<div class='col-md-12 col-xs-12 col-sm-12'>"+
-        "<img class='col-md-4' src='../img/boule.png' alt='boule' />"+
-        "<img class='col-md-4' src='../img/images/ange.png' alt='ange' />"+
-        "<img class='col-md-4' src='../img/images/&.png' alt='et' />"+
+        "<img class='col-md-4' src='assets/img/boule.png' alt='boule' />"+
+        "<img class='col-md-4' src='assets/img/ange.png' alt='ange' />"+
+        "<img class='col-md-4' src='assets/img/et.png' alt='et' />"+
         "</div>"+
         "<div class='inputRebus col-md-12 col-xs-12 col-sm-12'>"+
         "<input type='text' placeholder='Réponse' name='reponseRebus'/><button class='checkRebus'> Vérifier </button></div><div class='indication col-md-12'></div>");
@@ -396,6 +393,7 @@ function enigme6(){
 }
 
 function enigme7() {
+    if (localStorage.getItem('virtualQuest-stateFail') == null) {
     $("#modal8").modal("show");
     var essaisRestant = 3;
     var bonnesReponses = 0;
@@ -419,7 +417,7 @@ function enigme7() {
         }
 
         if(essaisRestant === 0){
-            derniereChance()
+            derniereChance();
         }
 
         if(bonnesReponses === 7){
@@ -428,11 +426,14 @@ function enigme7() {
             localStorage.setItem('virtualQuest-state', 'endWin');
         }
     });
+    } else {
+        derniereChance();
+    }
 }
 
 function derniereChance() {
+    localStorage.setItem('virtualQuest-stateFail', true);
     $("#modal10").modal("show");
-    localStorage.setItem('virtualQuest-state', 'endFail');
     $('.barreEnigme').html("C'est ta dernière chance ...");
     $('#enigme7 .enigme_content').addClass('hidden');
     $('#derniereChance .enigme_content').removeClass('hidden');
@@ -443,6 +444,7 @@ function derniereChance() {
             $(this).addClass("label-danger");
         }
         else if($(this).hasClass("dcVrai")){
+            localStorage.setItem('virtualQuest-state', 'endFail');
             $(this).removeClass("label-default");
             $(this).addClass("label-success");
             $("#modal9").modal("show");

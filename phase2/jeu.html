@@ -25,14 +25,14 @@
         </header>
         <!-- fin header -->         
         <!-- debut main -->
-        <main class="margin_top_10">
+        <main class="margin_top_10" id="main">
             <div class="grid_8 panotour" id="panoDIV">
             <script type="text/javascript" src="projectdata/project.js"></script>
                 <script type="text/javascript">
 
                     embedpano({
 
-                    xml:"projectdata/project.xml"
+                    xml:"projectdata/ecathedrale.xml"
 
                     ,target:"panoDIV"
                     ,passQueryParameters:true
@@ -118,7 +118,7 @@
                             </div>
                             <div id="cardPile">
                                 <div data-letter="n" class="dragIt"> Evrard de Fouilloy -> N </div>
-                                <div data-letter="p" class="dragIt"> Robert de Luzarche -> P </div>
+                                <div data-letter="p" class="dragIt"> Robert de Luzarches -> P </div>
                                 <div data-letter="i" class="dragIt"> Renaud de Cormont -> I </div>
                                 <div data-letter="a" class="dragIt"> Thomas de Cormont -> A </div>
                             </div>
@@ -186,6 +186,29 @@
                             <div id="essaisRestant" class="col-md-2 col-sm-2 col-xs-2">
                                 3
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="derniereChance" class="row enigmes">
+                    <div class="enigme_content col-md-12 hidden">
+                        <p>Connais-tu cette pâtisserie ?</p>
+                        <img src="assets/img/patisserie.jpg" width="50%"/>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="label label-default dcLabel dcFaux">Une Religieuse</span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="label label-default dcLabel dcFaux">Un Paris-Brest</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="label label-default dcLabel dcVrai">Un Saint-Honoré</span>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="label label-default dcLabel dcFaux">Un donut</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -424,7 +447,7 @@
                     <p>La corporation des boulangers lui a dédié la chapelle devant laquelle tu te trouves.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="endWin">Continuer</button>
+                    <button type="button" class="btn btn-default endButton" data-dismiss="modal" id="endWin">Continuer</button>
                 </div>
             </div>
         </div>
