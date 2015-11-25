@@ -10,6 +10,10 @@
     font-family: "NettoOT";
     src: url('../fonts/nettoot.otf');
 }
+@font-face {
+    font-family: "MasonBold";
+    src: url('../fonts/masonbold.ttf');
+}
 body{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -42,6 +46,8 @@ img.half {
     margin-right: auto;
 }
 #infosMainScreen {
+	color: #6B4A15;
+	margin-top: 18%;
 	display: block;
     margin-left: auto;
     margin-right: auto;
@@ -129,8 +135,15 @@ a:active {text-decoration: none; color: #6B4A15;}
 a:hover {text-decoration: none; color: #6B4A15;}
 a.home:hover {text-decoration: underline; color: #6B4A15;}
 
-#talkbubble {
+.nettooT {
 	font-family: "NettoOT";
+	color: #6B4A15;
+}
+.mediumSized {
+	font-size: 18px;
+}
+.bub {
+	
    padding: 10px;
    line-height: 50px;
    display: inline-block;
@@ -142,10 +155,10 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
    -webkit-border-radius: 10px;
    border-radius:         10px;
 }
-#talkbubble:before {
+.bub {
    content:"";
    position: absolute;
-   right: 100%;
+   left: 100%;
    top: 26px;
    width: 0;
    height: 0;
@@ -153,6 +166,40 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
    border-right: 26px solid #FFFFFF;
    border-bottom: 13px solid transparent;
 }
+#talkbubble 
+{	margin-top: 10%;
+	text-align: center;
+	vertical-align: middle;
+	font-family: "NettoOT";
+	color: #6B4A15;
+	position: relative;
+	width: 150px;
+	right: 10%;
+	float: right;
+	min-height: 50px;
+	max-height: auto;
+	padding: 0px;
+	background: #FFFFFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#talkbubble:after 
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 12px 0 12px 19px;
+	border-color: transparent #FFFFFF;
+	display: block;
+	width: 0;
+	z-index: 1;
+	margin-top: -12px;
+	right: -19px;
+	top: 45%;
+}
+
 .headerBG {
   	background: url(../img/bandeau_fond_alpha.png) center no-repeat; 
   	background-size: auto 150px;
@@ -161,4 +208,8 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
     margin-left: auto;
     margin-right: auto;
 
+}
+.smallWidth {
+	max-width: 10%;
+	text-align: center;
 }

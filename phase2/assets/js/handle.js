@@ -8,12 +8,14 @@ $( document ).ready(function() {
                 end();
             }
             else if(localStorage.getItem("virtualQuest-state") == "chercher"){
+                setLuzarches(1);
 
                 nouvelleEnigme(localStorage.getItem("virtualQuest-enigme"));
             }else{
-
+                setLuzarches(2);
                 debutEnigme(localStorage.getItem("virtualQuest-enigme"));
             }
+            $('#scoreBtn').attr("src", 'assets/img/btn_points_'+(localStorage.getItem("virtualQuest-enigme") - 1)+'.png');
 
         }
 
@@ -24,14 +26,40 @@ $( document ).ready(function() {
         }
 
         if(localStorage.getItem("virtualQuest-indice") !== null){
-            writeIndice(localStorage.getItem("virtualQuest-indice"));
+            setIndices(localStorage.getItem("virtualQuest-indice"));
         }
 
 
+        $('#helpBtn').click(help);
         $('#refreshReset').click(reset);
         $('.endButton').click(end);
+        $('.resetLuzarches').click(resetLuzarches);
 
     });
+
+function resetLuzarches() {
+    setLuzarches(1);
+    $("#talkbubble").hide();
+}
+function setLuzarches(posture) {
+    switch(posture) {
+        case 1:
+            $('#luzarches').attr("src", 'assets/img/enqueteur_neutre.png');
+            break;
+        case 2: 
+            $('#luzarches').attr("src", 'assets/img/enqueteur_reflechit.png');
+            break;
+        case 3:
+            $('#luzarches').attr("src", 'assets/img/enqueteur_expose.png');
+            break;
+
+    }
+}
+
+function help() {
+    $("#modalHelp").modal("show");
+}
+
 
 function reset() {
              localStorage.removeItem("virtualQuest-enigme");
@@ -52,13 +80,18 @@ function reset() {
         }
 
         function nouvelleEnigme(number, modal){
+            setLuzarches(1);
             if(parseInt(number) > 1) {
-             $('.barreEnigme').html('<p>Pour trouver la prochaine énigme :</p>');
+             $('.enigmTitle').html('<p>Pour trouver la prochaine énigme :</p>');
+            }
+            if (number == 7) {
+                $('.enigmTitle').html('<p>Pour trouver le personnage qui se cache derrière la vierge :</p>');
             }
             localStorage.setItem('virtualQuest-enigme', number);
             localStorage.setItem('virtualQuest-state', 'chercher');
             $('#enigme'+number+' .enigme_info').removeClass('hidden');
             if(modal){
+                setLuzarches(3);
                 $("#modal"+number).modal("show");
                 $('#enigme'+(parseInt(number)-1)+' .enigme_content').addClass('hidden');
                 if(parseInt(number) === 1)
@@ -67,7 +100,7 @@ function reset() {
         
         }
 
-        function writeIndice(indice){
+        function setIndices(indice){
             $('#indices').text(indice);
             localStorage.setItem("virtualQuest-indice",indice);
         }
@@ -75,10 +108,19 @@ function reset() {
             debutEnigme(number);
         }
         function debutEnigme(number){
-            console.log('Appel de l\'énigme n°'+number);
             if(localStorage.getItem("virtualQuest-enigme") == number){
+                setLuzarches(2);
+
                 localStorage.setItem('virtualQuest-state', 'resoudre');
-                $('.barreEnigme').html('<p>Énigme '+number+'</p>');
+                $('.enigmTitle').html('<p>Bravo tu as trouvé l\'énigme '+number+'</p>');
+                switch(number) {
+                    case '3': 
+                        $('.enigmTitle').html('<p>Bravo tu as trouvé la seconde partie de l\'énigme 2</p>');
+                        break;
+                    case '7':
+                        $('.enigmTitle').html('<p>Bravo tu as trouvé la dernière énigme </p>');
+                        break;
+                }
                 $('#enigme'+number+' .enigme_info').addClass('hidden');
                 $('#enigme'+number+' .enigme_content').removeClass('hidden');
                 switch(number) {
@@ -107,7 +149,7 @@ function reset() {
             }
         }
 
-
+// mot évéque mélangé
 function enigme1() {
     letter_cases = $(".square_letter_to_pickup");
     letter_cases.disableSelection();
@@ -158,10 +200,6 @@ function enigme1() {
         stop:function(){
             $count=0;
 
-            /*********************************/
-            /*    VERIFICATION LETTRES    */
-            /*********************************/
-
             if($(".square_letter:eq(0)").text() == "E"){
                 $(".square_letter:eq(0)").css("background","#00BB00");
                 $(".square_letter:eq(0) > span").draggable("disable");
@@ -205,8 +243,11 @@ function enigme1() {
             }
 
             if($count == 6){
+                $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
                 nouvelleEnigme(2,'showModal');
-                writeIndice('Evêque');
+                setIndices('Evêque');
+                $('#scoreBtn').attr("src", 'assets/img/btn_points_1.png');
             }
         },
         cursor:'move',
@@ -214,14 +255,12 @@ function enigme1() {
     });
 }
 
-/*
- * Enigme 2 partie 1
- * Objectif : Trouver les R dans les B
- * */
+// les 11 R qui font 3
 function enigme2(){
     var nbr=11;
-    $("#enigme2 .enigme_content").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='GrilleEnigme2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/><div class='nbR col-md-12'>Il reste 11 R à trouver. </span>");
-
+    $("#enigme2 .enigme_content").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='GrilleEnigme2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/></span>");
+    $("#talkbubble").html('<br>Il te reste 11 R à trouver.');
+    $("#talkbubble").show();
     $(".enigmes .GrilleEnigme2 td").on('click',function(){
 
         var lettre=$(this).text();
@@ -229,13 +268,14 @@ function enigme2(){
 
         if ((lettre =='R') && (css!='rgb(255, 0, 0)') && $(this).hasClass('clickR')){
             nbr--;
-            $(".nbR").html("il reste "+nbr+" R à trouver. ");
+            $("#talkbubble").html('<br>Il te reste '+nbr+' R à trouver.');
             $(this).removeClass('clickR');
             $(this).css("background", "LawnGreen");
             if(nbr==0){
-                $(".nbR").html("BRAVO!");
+                $("#talkbubble").html('<br> Bravo !');
                 nouvelleEnigme(3,'showModal');
-                writeIndice('évèque, 3');
+                setIndices('évèque, 3');
+                $('#scoreBtn').attr("src", 'assets/img/btn_points_2.png');
             }
         }
 
@@ -243,20 +283,14 @@ function enigme2(){
 }
 
 
-/*
- * Enigme 2 partie 2
- * Objectif : Trouver le nombre d'ange sur une image
- * Réponse : 3 anges
- * */
+// les 3 anges
 function enigme3() {
-    $("#anges").css('display','block');
-    $("#pano").hide();
     var htmlEnigme = $("#enigme3 .enigme_content");
     var nombreAnge = 3;
 
     //Écriture de l'énigme <html> dans la div énigme
     htmlEnigme
-        .html("<p class='col-md-12'>Pour résoudre cette énigme, dis-nous combien d'anges surplombent le portail <br/>À toi de jouer !</p><div class='col-md-12'><input type='text' placeholder='Réponse' name='reponseNbAnges' /> <button class='checkAnge'>Vérifier</button></div><div class='indication col-md-12'></div>"
+        .html("<p class='col-md-12'>Pour résoudre cette énigme, dis-nous combien d'anges surplombent le portail <br/>À toi de jouer !<br/> <img class='text-center' src='assets/img/anges.png' width='60%'/></p> <div class='col-md-12'><input type='text' placeholder='Réponse' name='reponseNbAnges' /> <button class='checkAnge'>Vérifier</button></div><div class='indication col-md-12ƒ'></div>"
     );
 
     //Click sur le bouton Vérifier
@@ -264,17 +298,20 @@ function enigme3() {
     htmlEnigme.on("click", ".checkAnge", function(){
         var reponseUser = $('input[name="reponseNbAnges"]').val();
         if (reponseUser == nombreAnge) {
-            $('.indication').text('BRAVO !');
-            $("#anges").css('display','none');
-            $("#pano").show();
+            $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
             nouvelleEnigme(4,'showModal');
-            writeIndice('évèque, 3 + 3');
+            setIndices('évèque, 3 + 3');
+            $('#scoreBtn').attr("src", 'assets/img/btn_points_3.png');
         } else {
-            $('.indication').text('Ce n\'est pas la bonne réponse. Essaye encore ...');
+            $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
+            $("#talkbubble").show();
+
         }
     });
 }
 
+//ordre des personnes (pain)
 function enigme4(){
     var correctCards = 0;
     $(".dragIt").disableSelection();
@@ -303,8 +340,11 @@ function enigme4(){
             correctCards++;
             console.log(correctCards);
             if(correctCards===4){
+                $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
                 nouvelleEnigme(5,'showModal');
-                writeIndice('évèque, 3 + 3, Pain');
+                setIndices('évèque, 3 + 3, Pain');
+                $('#scoreBtn').attr("src", 'assets/img/btn_points_4.png');
             }
         }
     }
@@ -320,11 +360,7 @@ function enigme4(){
     });
 }
 
-/*
- * Enigme 5
- * Objectif : Résoudre un rébus
- * Réponse : boulanger
- */
+//Rébus boulanger
 function enigme5(){
     var response1='boulanger';
 
@@ -342,29 +378,25 @@ function enigme5(){
 
     $(".enigmes").on('click', '.checkRebus', function(){
         var userResponse = $('input[name="reponseRebus"]').val().toLowerCase();
-        console.log(userResponse);
         if (userResponse == response1){
-            $('.indication').text('BRAVO !');
+            $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
             nouvelleEnigme(6,'showModal');
-            writeIndice('évèque, 3 + 3, Pain, boulanger');
+            setIndices('évèque, 3 + 3, Pain, boulanger');
+            $('#scoreBtn').attr("src", 'assets/img/btn_points_5.png');
         }
         else{
-            $('.indication').text('Ce n\'est pas la bonne réponse. Essaye encore ...');
+            $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
+            $("#talkbubble").show();
         }
     });
 
 }
 
 
-/*
- * Enigme 6
- * Objectif : Trouver le mot
- * Réponse : Saint ou Sain
- */
+// le mot saint
 function enigme6(){
     var htmlEnigme = $("#enigme6 .enigme_content");
-    var reponse1 = 'saint';
-    var reponse2 = 'sain';
 
     htmlEnigme
         .html(
@@ -382,16 +414,20 @@ function enigme6(){
 
     htmlEnigme.on('click', '.checkEnigme6', function(){
         var userResponse = $('input[name="reponseEnigme6"]').val().toLowerCase();
-        if (userResponse == reponse1 || userResponse == reponse2) {
-            $('.indication').text('BRAVO !');
+        if (userResponse == 'saint') {
+            $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
             nouvelleEnigme(7,'showModal');
-            writeIndice('évèque, 3 + 3, Pain, Saint');
+            setIndices('évèque, 3 + 3, Pain, Saint');
+            $('#scoreBtn').attr("src", 'assets/img/btn_points_6.png');
         }else{
-            $('.indication').text('Ce n\'est pas la bonne réponse. Essaye encore ...');
+            $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
+            $("#talkbubble").show();
         }
     });
 }
 
+//saint honoré
 function enigme7() {
     if (localStorage.getItem('virtualQuest-stateFail') == null) {
     $("#modal8").modal("show");
@@ -417,26 +453,30 @@ function enigme7() {
         }
 
         if(essaisRestant === 0){
-            derniereChance();
+            endFail();
         }
 
         if(bonnesReponses === 7){
+            setLuzarches(3);
+            $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
             $("#modal9").modal("show");
             $("#modal9 .modal-body button").addClass("modalGagne");
             localStorage.setItem('virtualQuest-state', 'endWin');
         }
     });
     } else {
-        derniereChance();
+        endFail();
     }
 }
 
-function derniereChance() {
+//enigme saint-honoré v2
+function endFail() {
     localStorage.setItem('virtualQuest-stateFail', true);
     $("#modal10").modal("show");
-    $('.barreEnigme').html("C'est ta dernière chance ...");
+    $('.enigmTitle').html("L'énigme 7");
     $('#enigme7 .enigme_content').addClass('hidden');
-    $('#derniereChance .enigme_content').removeClass('hidden');
+    $('#endFail .enigme_content').removeClass('hidden');
     $(".dcLabel").disableSelection();
     $(".dcLabel").click(function(){
         if($(this).hasClass("dcFaux")){
@@ -444,10 +484,13 @@ function derniereChance() {
             $(this).addClass("label-danger");
         }
         else if($(this).hasClass("dcVrai")){
+            setLuzarches(3);
             localStorage.setItem('virtualQuest-state', 'endFail');
             $(this).removeClass("label-default");
             $(this).addClass("label-success");
             $("#modal9").modal("show");
+            $("#talkbubble").html('<br> Bravo !');
+            $("#talkbubble").show();
         }
     });
 

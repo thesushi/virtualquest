@@ -19,7 +19,7 @@
                 </div>
                 <div class="grid_6 right">
                      <a href="#" id="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
-                    <a href="#"> <img class="uiButton" src="assets/img/btn_aide.png"> </a>
+                    
                 </div>
             </div>           
         </header>
@@ -28,17 +28,14 @@
         <main>
 
             <!-- fin du jeu -->
-    <div class="container_12">
-
-            <div id="endGameLost" class="col-md-12 col-xs-12 col-sm-12" >
-            <div class="title text-center">TOUTES NOS FELICITATIONS!</div>
-            <div class="teaser text-center">
+    <div class="container_12 nettooT mediumSized">
+            <div class=' alternate big text-center'>Toutes nos félicitations !</div>
+            <div class="text-center">
                 <p>Tu as découvert la dernière partie de la cathédrale.</p>
                 <p><img src="assets/img/plan7.jpg"></p>
                 <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
                 <p>Mais tu n'as pas trouvé le secret ultime... Alors veux tu rejouer?</p>
             </div>
-        </div>
             
         </div>
                   </div>
@@ -85,6 +82,15 @@
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
        <script type="text/javascript">
+        
+        if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
+            if(localStorage.getItem("virtualQuest-state") == "endWin") {
+                document.location.href="goodEnd.html"
+            }
+        } else {
+            document.location.href="index.html"
+        }
+    
         $('#refreshReset').click(reset);
         function reset() {
     localStorage.removeItem("virtualQuest-enigme");

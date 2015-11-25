@@ -19,7 +19,6 @@
                 </div>
                 <div class="grid_6 right">
                     <a href="#" id="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
-                    <a href="#"> <img class="uiButton" src="assets/img/btn_aide.png"> </a>
                 </div>
             </div>           
         </header>
@@ -28,28 +27,37 @@
         <main>
 
             <!-- fin du jeu -->
-    <div class="container_12">
+    <div class="container_12 nettooT mediumSized text-center ">
 
-            <div class="title text-center">TOUTES NOS FELICITATIONS!</div>
-            <div class="teaser text-center">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class=' alternate big grid_12'>Toutes nos félicitations !</div>
+            
+                <div class="grid_5">
+                    
                         <p>Ta reussite te permet d'accéder finalement à l'ange pleureur, le patron des enfants orphelins.</p>
                         <p>Cet ange triste symbolise le chagrin des orphelins dont la chanoine Guillan Lucas s'est occupé.</p>
-                        <p>Il se situe en haut de son mausolée comme tu peux le voir sur cette photo</p>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <p>Il se situe en haut de son mausolée comme tu peux le voir sur la photo</p>
+                </div>
+                    <div class="grid_3">
                         <img src="assets/img/tombeau.png" height="280">
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="grid_3">
                         <img src="assets/img/angePleureur.png" height="280">
                     </div>
+            
+                <div class="grid_12">
+                <br>
+                 <p>Ce mausolée de trouve dans la partie appelée déambulatoire</p>
                 </div>
-                <br/>
-                <p>Ce mausolée de trouve dans la partie appelée déambulatoire</p>
+
+                <div class="grid_12">
                 <p><img src="assets/img/plan7.jpg"></p>
+                </div>
+                <div class="grid_12">
                 <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
+                </div>
+                <div class="grid_12">
                 <p>Tu peux rejouer et essayer de terminer le jeu plus vite</p>
+                </div>
             </div>
             
         </div>
@@ -97,6 +105,15 @@
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
     <script type="text/javascript">
+    
+        if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
+            if(localStorage.getItem("virtualQuest-state") == "endFail") {
+                document.location.href="badEnd.html"
+            }
+        } else {
+            document.location.href="index.html"
+        }
+
         $('#refreshReset').click(reset);
         function reset() {
     localStorage.removeItem("virtualQuest-enigme");

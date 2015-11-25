@@ -18,8 +18,8 @@
                     <h3 class="alternate"> <a class="h3 home" href="index.html"> Accueil </a></h3>
                 </div>
                 <div class="grid_6 right">
-                    <a href="#"> <img class="uiButton" src="assets/img/btn_points_0.png"> </a>
-                    <a href="#"> <img class="uiButton" src="assets/img/btn_aide.png"> </a>
+                    <a href="#"> <img id="scoreBtn" class="uiButton" src="assets/img/btn_points_0.png"> </a>
+                    <a href="#"> <img  id="helpBtn" class="uiButton" src="assets/img/btn_aide.png"> </a>
                 </div>
             </div>           
         </header>
@@ -27,7 +27,7 @@
         <!-- debut main -->
         <main class="margin_top_10" id="main">
             <div class="grid_8 panotour" id="panoDIV">
-            <script type="text/javascript" src="projectdata/project.js"></script>
+                <script type="text/javascript" src="projectdata/project.js"></script>
                 <script type="text/javascript">
 
                     embedpano({
@@ -45,42 +45,43 @@
                 </script>
             </div>
             <div class="grid_4 enigmeBox">
-            <div class="enigme aventure">
-            <div class="barreEnigme">
+           
+                 <div class="enigme aventure">
+            <div class="enigmTitle">
                 <p>Énigme 1</p>
             </div>
-                <div id="enigme1" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme1" class=" enigmes">
+                    <div class="enigme_info hidden">
                         <p>Pour trouver l'énigme 1, longe la nef jusqu'au <strong>centre de la cathédrale</strong>. Tu dois trouver la cathèdre qui se situe devant le grille de coeur.</p>
                         <p>La cathèdre est le siège où l'évêque préside les cérémonies.</p>
                     </div>
                     <div class="enigme_content hidden">
-                        <div class="col-md-12 enigme_text">
-                            <p>Bravo tu as trouvé l'énigme 1</p>
+                        <div class="enigme_text">
+                     
                             <p>Pour résoudre cette énigme, replace les lettres dans l'ordre pour reconstituer le premier indice</p>
                             <p>Si la case devient verte, c'est que la lettre est à la bonne place.</p>
                             <p>A toi de jouer !</p>
                         </div>
-                        <div class="col-md-12 col-xs-12 col-sm-12 letters_div">
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter"></div>
+                        <div class="letters_div">
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter"></div>
                         </div>
-                        <div class="col-md-12 col-xs-12 col-sm-12 letters_div">
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="V"><span class="draggable">V</span></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="Q"><span class="draggable">Q</span></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
-                            <div class="col-md-2 col-sm-2 col-xs-2 square_letter_to_pickup" data-letter="U"><span class="draggable">U</span></div>
+                        <div class="letters_div">
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="E"><span class="draggable">E</span></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="Q"><span class="draggable">Q</span></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="U"><span class="draggable">U</span></div>
+                            <div class=" col-md-2 col-sm-2 col-xs-2  square_letter_to_pickup" data-letter="V"><span class="draggable">V</span></div>
                         </div>
                     </div>
                 </div>
-                <div id="enigme2" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme2" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Dirige-toi vers le <strong>NORD</strong>.</p><p>
                         N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
@@ -88,33 +89,37 @@
 
                     </div>
                 </div>
-                <div id="enigme3" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme3" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Recherche <strong>des anges surmontant une porte, revers d'un portail</strong>.</p>
+                        <p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="enigme_content hidden">
 
                     </div>
                 </div>
-                <div id="enigme4" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme4" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Recherche <strong>le labyrinthe</strong>.</p>
                         <p>Situé dans la nef, ce labyrinthe dont le parcours mesure 234 mètres, représente un octogone.
                            Il est constitué d'un pavage de pierres blanches et bleu foncé.</p>
+                           <p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="enigme_content hidden">
-                        <div class="col-md-12">
+                        <div class="">
                             <p>Bravo, tu as trouvé l'énigme 4 !</p>
                             <p class="small">Pour résoudre cette énigme, replace les 3 architectes de la cathédrale dans l'ordre chronologique.</p>
                             <p class="small">Il te restera ensuite à placer l'évêque qui a commandé la cathédrale en quatrième position.</p>
                         </div>
 
-                        <div id="dragDropEnigme4" class="col-md-12">
+                        <div id="dragDropEnigme4" class="">
                             <div id="cardSlots">
-                                <div data-letter="p" class="recepteur"> - </div>
-                                <div data-letter="a" class="recepteur"> - </div>
-                                <div data-letter="i" class="recepteur"> - </div>
-                                <div data-letter="n" class="recepteur"> - </div>
+                                <div data-letter="p" class="recepteur"> ? </div>
+                                <div data-letter="a" class="recepteur"> ? </div>
+                                <div data-letter="i" class="recepteur"> ? </div>
+                                <div data-letter="n" class="recepteur"> ? </div>
                             </div>
                             <div id="cardPile">
                                 <div data-letter="n" class="dragIt"> Evrard de Fouilloy -> N </div>
@@ -125,32 +130,38 @@
                         </div>
                     </div>
                 </div>
-                <div id="enigme5" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme5" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Rends-toi au devant de la <strong>clôture de coeur</strong>, qui ferme l'espace sacré, pas très loin de la cathèdre.</p>
+                        <p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="enigme_content hidden">
                     </div>
                 </div>
-                <div id="enigme6" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme6" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Rends-toi <strong>près d'un pilier</strong>, d'où tu peux voir la tribune des grandes orgues, située à l'arrière de la façade occidentale.</p>
+                        <p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="enigme_content hidden">
                     </div>
                 </div>
-                <div id="enigme7" class="row enigmes">
-                    <div class="enigme_info col-md-12 hidden">
+                <div id="enigme7" class=" enigmes">
+                    <div class="enigme_info  hidden">
                         <p>Dirige-toi dans les bas côtés de la Cathédrale, qui se situent de part et d'autre de la nef.</p>
                         <p>Il te faut trouver le bas-côté Nord.</p>
                         <p>L'indice se trouve près de la chapelle qui porte le nom de notre personnage mystère.</p>
+                        <p>
+                        N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
-                    <div class="enigme_content col-md-12 hidden">
+                    <div class="enigme_content  hidden">
                         <p>À toi de retrouver le personnage mystère. Aide-toi des indices trouvés.</p>
                         <p>Mais attention tu n'as le droit qu'à 3 chances !</p>
                         <p>Si tu échoues, tu perdras tes 5 clés</p>
                         <p>Clique sur une lettre pour savoir si elle se trouve dans le mot.</p>
-                        <div class="row pendu">
+                        <div class="pendu">
                             <div class="letter S col-md-1 col-sm-1 col-xs-1">S</div>
                             <div class="letter A col-md-1 col-sm-1 col-xs-1">_</div>
                             <div class="letter I col-md-1 col-sm-1 col-xs-1">_</div>
@@ -164,9 +175,9 @@
                             <div class="letter R col-md-1 col-sm-1 col-xs-1">_</div>
                             <div class="letter É col-md-1 col-sm-1 col-xs-1">_</div>
                         </div>
-                        <div class="row">
+                        <div class="">
                             <div class="col-md-10 col-md-10 col-sm-10">
-                                <div class="row choice_letter">
+                                <div class="choice_letter">
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">T</div>
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">C</div>
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">R</div>
@@ -174,7 +185,7 @@
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">L</div>
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">U</div>
                                 </div>
-                                <div class="row choice_letter">
+                                <div class="choice_letter">
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">P</div>
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">A</div>
                                     <div class="letter col-md-2 col-sm-2 col-xs-2">É</div>
@@ -187,13 +198,14 @@
                                 3
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
-                <div id="derniereChance" class="row enigmes">
-                    <div class="enigme_content col-md-12 hidden">
+                <div id="endFail" class=" enigmes">
+                    <div class="enigme_content  hidden text-center">
                         <p>Connais-tu cette pâtisserie ?</p>
-                        <img src="assets/img/patisserie.jpg" width="50%"/>
-                        <div class="row">
+                        <img src="assets/img/patisserie.png" width="50%"/>
+                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <span class="label label-default dcLabel dcFaux">Une Religieuse</span>
                             </div>
@@ -213,7 +225,6 @@
                     </div>
                 </div>
                 
-                </div>
             </div>
 
             <div class="grid_8 indiceBox">
@@ -227,7 +238,7 @@
         </div>
             </div>
             <div class="grid_4 luzarchesBox">
-            <span id="spriteLuzarches"><img src="./assets/img/enqueteur_neutre.png" /> </span>
+            <span id="spriteLuzarches"><img id="luzarches" src="./assets/img/enqueteur_neutre.png" /> </span>
             <div id="talkbubble">   </div>
             </div>
 
@@ -251,7 +262,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Pour commencer...</h4>
                 </div>
                 <div class="modal-body">
@@ -263,7 +274,7 @@
                     <p>Bonne chasse.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -274,7 +285,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -285,7 +296,7 @@
                     <p>Maintenant dirige-toi vers le Nord</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -296,7 +307,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -304,7 +315,7 @@
                     <p>Pour trouver la seconde partie de l'indice, tu dois te rendre à l'opposé du Nord.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -315,7 +326,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -326,7 +337,7 @@
                     <img src="assets/img/plan2.jpg" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -337,7 +348,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -352,7 +363,7 @@
                     <img src="assets/img/plan3.jpg" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -363,7 +374,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -376,7 +387,7 @@
                     <img src="assets/img/plan4.jpg" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -387,7 +398,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -399,7 +410,7 @@
                     <img src="assets/img/plan5.jpg" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -432,7 +443,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Voilà,</h4>
                 </div>
                 <div class="modal-body">
@@ -447,7 +458,7 @@
                     <p>La corporation des boulangers lui a dédié la chapelle devant laquelle tu te trouves.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default endButton" data-dismiss="modal" id="endWin">Continuer</button>
+                    <button type="button" class="btn btn-default endButton resetLuzarches" data-dismiss="modal" id="endWin">Continuer</button>
                 </div>
             </div>
         </div>
@@ -466,6 +477,32 @@
                     <p>Tu viens de perdre toutes tes clefs, tu ne pourras donc pas accéder au secret ultime.</p>
                     <p>Mais il reste une dernière chance pour tenter de trouver le personnage mystère.</p>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default " data-dismiss="modal">Continuer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal help -->
+    <div class="modal fade" id="modalHelp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Aide</h4>
+                </div>
+                <div class="modal-body nettooT">
+                    <h3> Navigation :</h3>
+                    <p> Utilise l'interface panoramique pour naviguer dans la cathédrale et trouver les énigmes. </p>
+                    <p> Les flèches te permettent de te déplacer, et les marqueurs de trouver les énigmes.</p>
+                    <h3> Enigmes : </h3>
+                    <p> Résous les énigmes pour avancer dans le jeu, elles sont au nombre de 7.</p>
+                    <h3> Boussole :</h3>
+                    <p> Elle te permet de te repérer dans la cathédrale et de résoudre les énigmes. </p>
+                    <h3> Remise à zéro : </h3>
+                    <p> <a href="#"id="refreshReset">→ Recommencer le jeu.</a><p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>

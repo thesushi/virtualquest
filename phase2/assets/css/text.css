@@ -10,6 +10,7 @@
 
 body {
   font: 13px/1.5 'NettoOT', Arial, sans-serif;
+  color: #6B4A15;
 }
 
 hr {
@@ -52,13 +53,22 @@ h6 {
 .regular {
   font-family: 'MasonSans', Arial, sans-serif;
 }
+.regularColor {
+  font-family: 'MasonSans', Arial, sans-serif;
+  color: #6B4A15;
+}
 .big {
   font-size: 50px;
 }
-
+.regularBold {
+  font-family: 'MasonBold', Arial, sans-serif;
+}
 /* `Spacing
 ----------------------------------------------------------------------------------------------------*/
-
+.shadowedText {
+  text-shadow: 2px 1px 1px grey;
+  color: #6B4A15;
+}
 ol {
   list-style: decimal;
 }
