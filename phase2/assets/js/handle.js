@@ -103,9 +103,6 @@ function reset() {
             $('#indices').text(indice);
             localStorage.setItem("virtualQuestPhase2-indice",indice);
         }
-        function startStep(number){
-            debutEnigme(number);
-        }
         function debutEnigme(number){
             if(localStorage.getItem("virtualQuestPhase2-enigme") == number){
                 setLuzarches(2);
