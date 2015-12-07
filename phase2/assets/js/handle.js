@@ -1,7 +1,7 @@
+$("#wrapper").hide();
 $( document ).ready(function() {
 
     $("#talkbubble").hide();
-    $("#wrapper").hide();
 
         if(localStorage.getItem("virtualQuestPhase2-enigme") !== null && localStorage.getItem("virtualQuestPhase2-state") !== null){
       
@@ -29,7 +29,7 @@ $( document ).ready(function() {
         if(localStorage.getItem("virtualQuestPhase2-indice") !== null){
             setIndices(localStorage.getItem("virtualQuestPhase2-indice"));
         }
-        $("#wrapper").hide();
+        $("#wrapper").show();
         $('#helpBtn').click(help);
         $('#refreshReset').click(reset);
         $('.endButton').click(end);
