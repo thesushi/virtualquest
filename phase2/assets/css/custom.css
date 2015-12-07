@@ -142,30 +142,6 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
 .mediumSized {
 	font-size: 18px;
 }
-.bub {
-	
-   padding: 10px;
-   line-height: 50px;
-   display: inline-block;
-   width: 120px;
-   height: auto;
-   background: #FFFFFF;
-   position: relative;
-   -moz-border-radius:    10px;
-   -webkit-border-radius: 10px;
-   border-radius:         10px;
-}
-.bub {
-   content:"";
-   position: absolute;
-   left: 100%;
-   top: 26px;
-   width: 0;
-   height: 0;
-   border-top: 13px solid transparent;
-   border-right: 26px solid #FFFFFF;
-   border-bottom: 13px solid transparent;
-}
 #talkbubble 
 {	margin-top: 10%;
 	text-align: center;

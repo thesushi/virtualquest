@@ -1,35 +1,35 @@
 $( document ).ready(function() {
-    $('.aventure').css('display', 'block');
-    $("#talkbubble").hide();
 
-        if(localStorage.getItem("virtualQuest-enigme") !== null && localStorage.getItem("virtualQuest-state") !== null){
+    $("#talkbubble").hide();
+    $("#wrapper").hide();
+
+        if(localStorage.getItem("virtualQuestPhase2-enigme") !== null && localStorage.getItem("virtualQuestPhase2-state") !== null){
       
-            if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
-                end();
+            if(localStorage.getItem("virtualQuestPhase2-state") == "endFail" || localStorage.getItem("virtualQuestPhase2-state") == "endWin"){
+               end();
             }
-            else if(localStorage.getItem("virtualQuest-state") == "chercher"){
+            else if(localStorage.getItem("virtualQuestPhase2-state") == "chercher"){
                 setLuzarches(1);
 
-                nouvelleEnigme(localStorage.getItem("virtualQuest-enigme"));
+                nouvelleEnigme(localStorage.getItem("virtualQuestPhase2-enigme"));
             }else{
                 setLuzarches(2);
-                debutEnigme(localStorage.getItem("virtualQuest-enigme"));
+                debutEnigme(localStorage.getItem("virtualQuestPhase2-enigme"));
             }
-            $('#scoreBtn').attr("src", 'assets/img/btn_points_'+(localStorage.getItem("virtualQuest-enigme") - 1)+'.png');
+            $('#scoreBtn').attr("src", 'assets/img/btn_points_'+(localStorage.getItem("virtualQuestPhase2-enigme") - 1)+'.png');
 
         }
 
-        if (localStorage.getItem('virtualQuest-isStarted') == null) {
+        if (localStorage.getItem('virtualQuestPhase2-isStarted') == null) {
             //debut du  jeu
              nouvelleEnigme(1, true);
-             localStorage.setItem('virtualQuest-isStarted', true);
+             localStorage.setItem('virtualQuestPhase2-isStarted', true);
         }
 
-        if(localStorage.getItem("virtualQuest-indice") !== null){
-            setIndices(localStorage.getItem("virtualQuest-indice"));
+        if(localStorage.getItem("virtualQuestPhase2-indice") !== null){
+            setIndices(localStorage.getItem("virtualQuestPhase2-indice"));
         }
-
-
+        $("#wrapper").hide();
         $('#helpBtn').click(help);
         $('#refreshReset').click(reset);
         $('.endButton').click(end);
@@ -62,67 +62,66 @@ function help() {
 
 
 function reset() {
-             localStorage.removeItem("virtualQuest-enigme");
-            localStorage.removeItem("virtualQuest-state");
-            localStorage.removeItem("virtualQuest-indice");
-             localStorage.removeItem("virtualQuest-isStarted");
-             localStorage.removeItem("virtualQuest-stateFail");
+             localStorage.removeItem("virtualQuestPhase2-enigme");
+            localStorage.removeItem("virtualQuestPhase2-state");
+            localStorage.removeItem("virtualQuestPhase2-indice");
+             localStorage.removeItem("virtualQuestPhase2-isStarted");
+             localStorage.removeItem("virtualQuestPhase2-stateFail");
              document.location.href="index.html"
 
     }
         function end(){
-            if(localStorage.getItem("virtualQuest-state") == "endWin") {
+            if(localStorage.getItem("virtualQuestPhase2-state") == "endWin") {
                 document.location.href="goodEnd.html"
-            }else if(localStorage.getItem("virtualQuest-state") == "endFail"){
+            }else if(localStorage.getItem("virtualQuestPhase2-state") == "endFail"){
                 document.location.href="badEnd.html"
             }
-            $('#main').css('display', 'none');
         }
 
         function nouvelleEnigme(number, modal){
             setLuzarches(1);
             if(parseInt(number) > 1) {
-             $('.enigmTitle').html('<p>Pour trouver la prochaine énigme :</p>');
+             $('.titreEnigme').html('<p>Pour trouver la prochaine énigme :</p>');
             }
             if (number == 7) {
-                $('.enigmTitle').html('<p>Pour trouver le personnage qui se cache derrière la vierge :</p>');
+                $('.titreEnigme').html('<p>Pour trouver le personnage qui se cache derrière la vierge :</p>');
             }
-            localStorage.setItem('virtualQuest-enigme', number);
-            localStorage.setItem('virtualQuest-state', 'chercher');
-            $('#enigme'+number+' .enigme_info').removeClass('hidden');
+            localStorage.setItem('virtualQuestPhase2-enigme', number);
+            localStorage.setItem('virtualQuestPhase2-state', 'chercher');
+            $('#enigme'+number+' .info_e').removeClass('hidden');
             if(modal){
                 setLuzarches(3);
                 $("#modal"+number).modal("show");
-                $('#enigme'+(parseInt(number)-1)+' .enigme_content').addClass('hidden');
+                $('#enigme'+(parseInt(number)-1)+' .corps_e').addClass('hidden');
                 if(parseInt(number) === 1)
-                    $('#enigme7 .enigme_content').addClass('hidden');
+                    $('#enigme7 .corps_e').addClass('hidden');
             }       
         
         }
 
         function setIndices(indice){
             $('#indices').text(indice);
-            localStorage.setItem("virtualQuest-indice",indice);
+            localStorage.setItem("virtualQuestPhase2-indice",indice);
         }
         function startStep(number){
             debutEnigme(number);
         }
         function debutEnigme(number){
-            if(localStorage.getItem("virtualQuest-enigme") == number){
+            if(localStorage.getItem("virtualQuestPhase2-enigme") == number){
                 setLuzarches(2);
 
-                localStorage.setItem('virtualQuest-state', 'resoudre');
-                $('.enigmTitle').html('<p>Bravo tu as trouvé l\'énigme '+number+'</p>');
+                localStorage.setItem('virtualQuestPhase2-state', 'resoudre');
+                $('.titreEnigme').html('<p>Bravo tu as trouvé l\'énigme '+number+'</p>');
                 switch(number) {
                     case '3': 
-                        $('.enigmTitle').html('<p>Bravo tu as trouvé la seconde partie de l\'énigme 2</p>');
+                        $('.titreEnigme').html('<p>Bravo tu as trouvé la seconde partie de l\'énigme 2</p>');
                         break;
                     case '7':
-                        $('.enigmTitle').html('<p>Bravo tu as trouvé la dernière énigme </p>');
+                        $('.titreEnigme').html('<p>Bravo tu as trouvé la dernière énigme </p>');
                         break;
                 }
-                $('#enigme'+number+' .enigme_info').addClass('hidden');
-                $('#enigme'+number+' .enigme_content').removeClass('hidden');
+                $('#enigme'+number+' .info_e').addClass('hidden');
+                $('#enigme'+number+' .corps_e').removeClass('hidden');
                 switch(number) {
                     case '1':
                         enigme1();
@@ -151,12 +150,12 @@ function reset() {
 
 // mot évéque mélangé
 function enigme1() {
-    letter_cases = $(".square_letter_to_pickup");
+    letter_cases = $(".lettre_e1_case_active");
     letter_cases.disableSelection();
     letter_cases.children().disableSelection();
-    $('.square_letter').disableSelection();
+    $('.lettre_e1_case').disableSelection();
 
-    $(".square_letter").droppable({
+    $(".lettre_e1_case").droppable({
         drop: function(event,ui){
             if( $(this).html() == "") {
                 // case vide
@@ -200,45 +199,45 @@ function enigme1() {
         stop:function(){
             $count=0;
 
-            if($(".square_letter:eq(0)").text() == "E"){
-                $(".square_letter:eq(0)").css("background","#00BB00");
-                $(".square_letter:eq(0) > span").draggable("disable");
-                $(".square_letter:eq(0) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(0)").text() == "E"){
+                $(".lettre_e1_case:eq(0)").css("background","#00BB00");
+                $(".lettre_e1_case:eq(0) > span").draggable("disable");
+                $(".lettre_e1_case:eq(0) > span").attr("state","locked");
                 $count++;
             }
 
-            if($(".square_letter:eq(1)").text() == "V"){
-                $(".square_letter:eq(1)").css("background","#00BB00");
-                $(".square_letter:eq(1) > span").draggable("disable");
-                $(".square_letter:eq(1) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(1)").text() == "V"){
+                $(".lettre_e1_case:eq(1)").css("background","#00BB00");
+                $(".lettre_e1_case:eq(1) > span").draggable("disable");
+                $(".lettre_e1_case:eq(1) > span").attr("state","locked");
                 $count++;
             }
 
-            if($(".square_letter:eq(2)").text() == "E"){
-                $(".square_letter:eq(2)").css("background","#00BB00");
-                $(".square_letter:eq(2) > span").draggable("disable");
-                $(".square_letter:eq(2) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(2)").text() == "E"){
+                $(".lettre_e1_case:eq(2)").css("background","#00BB00");
+                $(".lettre_e1_case:eq(2) > span").draggable("disable");
+                $(".lettre_e1_case:eq(2) > span").attr("state","locked");
                 $count++;
             }
 
-            if($(".square_letter:eq(3)").text() == "Q"){
-                $(".square_letter:eq(3)").css("background","#00BB00");
-                $(".square_letter:eq(3) > span").draggable("disable");
-                $(".square_letter:eq(3) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(3)").text() == "Q"){
+                $(".lettre_e1_case:eq(3)").css("background","#00BB00");
+                $(".lettre_e1_case:eq(3) > span").draggable("disable");
+                $(".lettre_e1_case:eq(3) > span").attr("state","locked");
                 $count++;
             }
 
-            if($(".square_letter:eq(4)").text() == "U"){
-                $(".square_letter:eq(4)").css("background","#00BB00");
-                $(".square_letter:eq(4) > span").draggable("disable");
-                $(".square_letter:eq(4) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(4)").text() == "U"){
+                $(".lettre_e1_case:eq(4)").css("background","#00BB00");
+                $(".lettre_e1_case:eq(4) > span").draggable("disable");
+                $(".lettre_e1_case:eq(4) > span").attr("state","locked");
                 $count++;
             }
 
-            if($(".square_letter:eq(5)").text() == "E") {
-                $(".square_letter:eq(5)").css("background", "#00BB00");
-                $(".square_letter:eq(5) > span").draggable("disable");
-                $(".square_letter:eq(5) > span").attr("state","locked");
+            if($(".lettre_e1_case:eq(5)").text() == "E") {
+                $(".lettre_e1_case:eq(5)").css("background", "#00BB00");
+                $(".lettre_e1_case:eq(5) > span").draggable("disable");
+                $(".lettre_e1_case:eq(5) > span").attr("state","locked");
                 $count++;
             }
 
@@ -258,10 +257,10 @@ function enigme1() {
 // les 11 R qui font 3
 function enigme2(){
     var nbr=11;
-    $("#enigme2 .enigme_content").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='GrilleEnigme2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/></span>");
+    $("#enigme2 .corps_e").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='tab_e2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/></span>");
     $("#talkbubble").html('<br>Il te reste 11 R à trouver.');
     $("#talkbubble").show();
-    $(".enigmes .GrilleEnigme2 td").on('click',function(){
+    $(".enigmes .tab_e2 td").on('click',function(){
 
         var lettre=$(this).text();
         var css=$(this).css('background-color');
@@ -285,18 +284,18 @@ function enigme2(){
 
 // les 3 anges
 function enigme3() {
-    var htmlEnigme = $("#enigme3 .enigme_content");
+    var htmlEnigme = $("#enigme3 .corps_e");
     var nombreAnge = 3;
 
     //Écriture de l'énigme <html> dans la div énigme
     htmlEnigme
-        .html("<p class='col-md-12'>Pour résoudre cette énigme, dis-nous combien d'anges surplombent le portail <br/>À toi de jouer !<br/> <img class='text-center' src='assets/img/anges.png' width='60%'/></p> <div class='col-md-12'><input type='text' placeholder='Réponse' name='reponseNbAnges' /> <button class='checkAnge'>Vérifier</button></div><div class='indication col-md-12ƒ'></div>"
+        .html("<p class='col-md-12'>Pour résoudre cette énigme, dis-nous combien d'anges surplombent le portail <br/>À toi de jouer !<br/> <img class='text-center' src='assets/img/anges.png' width='60%'/></p> <div class='col-md-12'><input type='text' placeholder='Réponse' name='rep_e3' /> <button class='checkAnge'>Vérifier</button></div><div class='indication col-md-12ƒ'></div>"
     );
 
     //Click sur le bouton Vérifier
     //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkAnge", function(){
-        var reponseUser = $('input[name="reponseNbAnges"]').val();
+        var reponseUser = $('input[name="rep_e3"]').val();
         if (reponseUser == nombreAnge) {
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
@@ -313,33 +312,28 @@ function enigme3() {
 
 //ordre des personnes (pain)
 function enigme4(){
-    var correctCards = 0;
+    var nbCartes = 0;
     $(".dragIt").disableSelection();
 
     function handleCardDrop(event, ui ) {
-        var slotLetter = $(this).data('letter');
-        var cardLetter = ui.draggable.data('letter');
+        var emplacements = $(this).data('letter');
+        var cartes = ui.draggable.data('letter');
 
         ui.draggable.position({of: $(this), my: 'left top', at: 'left top'});
 
-        $("#cardPile").find("div").each(function() {
-            if($(this).data("letterStock")===slotLetter){
-                $(this).css("left", "");
-                $(this).css("top", "");
-                $(this).removeData("letterStock");
-            }
-        });
-
-        if (cardLetter !== slotLetter) {
-            ui.draggable.data("letterStock", $(this).data('letter'));
+        if (cartes !== emplacements) {
+            ui.draggable.data("lettreActive", $(this).data('letter'));
         } else {
-            ui.draggable.addClass('correctCard');
+            $(this).css("left", "");
+            $(this).css("top", "");
+            $(this).removeData("lettreActive");
+            ui.draggable.addClass('bonneReponse');
             ui.draggable.draggable('disable');
             $(this).droppable('disable');
             ui.draggable.draggable('option', 'revert', false);
-            correctCards++;
-            console.log(correctCards);
-            if(correctCards===4){
+            nbCartes++;
+            $(this).removeClass('recepteur');
+            if(nbCartes===4){
                 $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
                 nouvelleEnigme(5,'showModal');
@@ -347,6 +341,13 @@ function enigme4(){
                 $('#scoreBtn').attr("src", 'assets/img/btn_points_4.png');
             }
         }
+        $("#e4_lettre").find("div").each(function() {
+            if($(this).data("lettreActive") === emplacements){
+                $(this).css("left", "");
+                $(this).css("top", "");
+                $(this).removeData("lettreActive");
+            }
+        });
     }
 
     $(".recepteur").droppable({
@@ -364,7 +365,7 @@ function enigme4(){
 function enigme5(){
     var response1='boulanger';
 
-    $("#enigme5 .enigme_content")
+    $("#enigme5 .corps_e")
         .html("" +
         "<p class='col-md-12 col-xs-12 col-sm-12'>Sauras-tu résoudre ce rébus pour trouver le quatrième indice ?</p>" +
         "<p class='col-md-12'>À toi de jouer !</p>" +
@@ -374,10 +375,10 @@ function enigme5(){
         "<img class='col-md-4' src='assets/img/et.png' alt='et' />"+
         "</div>"+
         "<div class='inputRebus col-md-12 col-xs-12 col-sm-12'>"+
-        "<input type='text' placeholder='Réponse' name='reponseRebus'/><button class='checkRebus'> Vérifier </button></div><div class='indication col-md-12'></div>");
+        "<input type='text' placeholder='Réponse' name='rep_e5'/><button class='checkRebus'> Vérifier </button></div><div class='indication col-md-12'></div>");
 
     $(".enigmes").on('click', '.checkRebus', function(){
-        var userResponse = $('input[name="reponseRebus"]').val().toLowerCase();
+        var userResponse = $('input[name="rep_e5"]').val().toLowerCase();
         if (userResponse == response1){
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
@@ -396,7 +397,7 @@ function enigme5(){
 
 // le mot saint
 function enigme6(){
-    var htmlEnigme = $("#enigme6 .enigme_content");
+    var htmlEnigme = $("#enigme6 .corps_e");
 
     htmlEnigme
         .html(
@@ -408,12 +409,12 @@ function enigme6(){
         "4. Chaque jour le calendrier en célèbre un différent <br/>" +
         "</p>" +
         "<div class='col-md-12'>" +
-        "<input type='text' placeholder='Réponse' name='reponseEnigme6' /> <button class='checkEnigme6'>Vérifier</button>" +
+        "<input type='text' placeholder='Réponse' name='rep_6' /> <button class='checkEnigme6'>Vérifier</button>" +
         "</div><div class='indication col-md-12'></div>"
     );
 
     htmlEnigme.on('click', '.checkEnigme6', function(){
-        var userResponse = $('input[name="reponseEnigme6"]').val().toLowerCase();
+        var userResponse = $('input[name="rep_6"]').val().toLowerCase();
         if (userResponse == 'saint') {
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
@@ -429,18 +430,18 @@ function enigme6(){
 
 //saint honoré
 function enigme7() {
-    if (localStorage.getItem('virtualQuest-stateFail') == null) {
+    if (localStorage.getItem('virtualQuestPhase2-stateFail') == null) {
     $("#modal8").modal("show");
-    var essaisRestant = 3;
+    var chances = 3;
     var bonnesReponses = 0;
     var bonnesLettres = ['A', 'I', 'N', 'T', 'O', 'R', 'É'];
 
     bonnesLettres.forEach(function(lettre) {
         $('.'+lettre).text('_');
-        $('.letter').show();
+        $('.lettre').show();
     });
 
-    $('.choice_letter .letter').on('click', function(event) {
+    $('.lettre_e7 .lettre').on('click', function(event) {
         var lettreChoisie = event.target.innerText;
 
         if(bonnesLettres.indexOf(lettreChoisie) > -1){
@@ -448,11 +449,11 @@ function enigme7() {
             bonnesReponses++;
             $(event.target).hide();
         }else{
-            essaisRestant--;
-            $('#essaisRestant').text(essaisRestant);
+            chances--;
+            $('#chances').text(chances);
         }
 
-        if(essaisRestant === 0){
+        if(chances === 0){
             endFail();
         }
 
@@ -462,7 +463,7 @@ function enigme7() {
             $("#talkbubble").show();
             $("#modal9").modal("show");
             $("#modal9 .modal-body button").addClass("modalGagne");
-            localStorage.setItem('virtualQuest-state', 'endWin');
+            localStorage.setItem('virtualQuestPhase2-state', 'endWin');
         }
     });
     } else {
@@ -472,11 +473,11 @@ function enigme7() {
 
 //enigme saint-honoré v2
 function endFail() {
-    localStorage.setItem('virtualQuest-stateFail', true);
+    localStorage.setItem('virtualQuestPhase2-stateFail', true);
     $("#modal10").modal("show");
-    $('.enigmTitle').html("L'énigme 7");
-    $('#enigme7 .enigme_content').addClass('hidden');
-    $('#endFail .enigme_content').removeClass('hidden');
+    $('.titreEnigme').html("L'énigme 7");
+    $('#enigme7 .corps_e').addClass('hidden');
+    $('#endFail .corps_e').removeClass('hidden');
     $(".dcLabel").disableSelection();
     $(".dcLabel").click(function(){
         if($(this).hasClass("dcFaux")){
@@ -485,7 +486,7 @@ function endFail() {
         }
         else if($(this).hasClass("dcVrai")){
             setLuzarches(3);
-            localStorage.setItem('virtualQuest-state', 'endFail');
+            localStorage.setItem('virtualQuestPhase2-state', 'endFail');
             $(this).removeClass("label-default");
             $(this).addClass("label-success");
             $("#modal9").modal("show");

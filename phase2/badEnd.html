@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>VirtualQuest - Mais qui est qui ?</title>
+        <title>virtualQuest - Mais qui est qui ?</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="assets/img/logo.png" />
@@ -82,9 +82,9 @@
     <script type="text/javascript" src="assets/js/adapt.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
        <script type="text/javascript">
-        
-        if(localStorage.getItem("virtualQuest-state") == "endFail" || localStorage.getItem("virtualQuest-state") == "endWin"){
-            if(localStorage.getItem("virtualQuest-state") == "endWin") {
+         
+        if(localStorage.getItem("virtualQuestPhase2-state") == "endFail" || localStorage.getItem("virtualQuestPhase2-state") == "endWin"){
+            if(localStorage.getItem("virtualQuestPhase2-state") == "endWin") {
                 document.location.href="goodEnd.html"
             }
         } else {
@@ -93,11 +93,11 @@
     
         $('#refreshReset').click(reset);
         function reset() {
-    localStorage.removeItem("virtualQuest-enigme");
-            localStorage.removeItem("virtualQuest-state");
-            localStorage.removeItem("virtualQuest-indice");
-             localStorage.removeItem("virtualQuest-isStarted");
-             localStorage.removeItem("virtualQuest-stateFail");
+            localStorage.removeItem("virtualQuestPhase2-enigme");
+            localStorage.removeItem("virtualQuestPhase2-state");
+            localStorage.removeItem("virtualQuestPhase2-indice");
+             localStorage.removeItem("virtualQuestPhase2-isStarted");
+             localStorage.removeItem("virtualQuestPhase2-stateFail");
              document.location.href="index.html"
 
     }
