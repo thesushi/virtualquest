@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[Nouveau projet]]></data>
+
+
+
+  <data name="en_pano61_title"><![CDATA[Démarrage Ouest (1)]]></data>
+
+
+  <data name="en_pano72_title"><![CDATA[Avancé vers l'est (3)]]></data>
+
+
+  <data name="en_pano76_title"><![CDATA[Avancé vers l'est + enigmes (4) ]]></data>
+  <data name="en_spotpoint95javascriptcalljsfunctioncall"><![CDATA[debutEnigme(1)]]></data>
+
+
+  <data name="en_pano111_title"><![CDATA[Avancé vers le nord + enigmes (5) ]]></data>
+  <data name="en_spotpoint116javascriptcalljsfunctioncall"><![CDATA[debutEnigme(2)]]></data>
+
+
+  <data name="en_pano64_title"><![CDATA[Avancé vers l'est (2)]]></data>
+  <data name="en_spotpoint232javascriptcalljsfunctioncall"><![CDATA[debutEnigme(4)]]></data>
+
+
+  <data name="en_pano117_title"><![CDATA[Avancé vers le sud (6)]]></data>
+  <data name="en_spotpoint119javascriptcalljsfunctioncall"><![CDATA[debutEnigme(3)]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
