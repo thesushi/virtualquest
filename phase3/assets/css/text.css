@@ -1,0 +1,101 @@
+/*
+  960 Grid System ~ Text CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+
+body {
+  font: 13px/1.5 'NettoOT', Arial, sans-serif;
+  color: #2F4F3F;
+}
+
+hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+.alternate {
+  font-family: 'MasonSansAlternate', Arial, sans-serif;
+  color: #2F4F3F;
+}
+.regular {
+  font-family: 'MasonSans', Arial, sans-serif;
+}
+.regularColor {
+  font-family: 'MasonSans', Arial, sans-serif;
+  color: #2F4F3F;
+}
+.big {
+  font-size: 50px;
+}
+.regularBold {
+  font-family: 'MasonBold', Arial, sans-serif;
+}
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+.shadowedText {
+  text-shadow: 2px 1px 1px grey;
+  color: #2F4F3F;
+}
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin-left: 30px;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin-bottom: 20px;
+}
