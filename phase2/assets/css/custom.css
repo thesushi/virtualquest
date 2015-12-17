@@ -189,3 +189,6 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
 	max-width: 10%;
 	text-align: center;
 }
+a.underline {
+	text-decoration: underline;
+}

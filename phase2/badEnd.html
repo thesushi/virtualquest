@@ -18,7 +18,7 @@
                     
                 </div>
                 <div class="grid_6 right">
-                     <a href="#" id="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
+                     <a href="#" class="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
                     
                 </div>
             </div>           
@@ -34,7 +34,7 @@
                 <p>Tu as découvert la dernière partie de la cathédrale.</p>
                 <p><img src="assets/img/plan7.jpg"></p>
                 <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
-                <p>Mais tu n'as pas trouvé le secret ultime... Alors veux tu rejouer?</p>
+                <p>Mais tu n'as pas trouvé le secret ultime... Alors veux tu <a href="#" class="refreshReset underline">rejouer</a> ?</p>
             </div>
             
         </div>
@@ -91,7 +91,7 @@
             document.location.href="index.html"
         }
     
-        $('#refreshReset').click(reset);
+        $('.refreshReset').click(reset);
         function reset() {
             localStorage.removeItem("virtualQuestPhase2-enigme");
             localStorage.removeItem("virtualQuestPhase2-state");

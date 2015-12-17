@@ -27,6 +27,9 @@ body{
 	border: 1px solid #82B49B;
 	margin-bottom: 50px;
 }
+.center {
+	text-align: center;
+}
 .imgHeader {
 	width: 30%;
 	display: block;
@@ -144,6 +147,7 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 }
 #talkbubble 
 {	margin-top: 10%;
+	padding: 5px;
 	text-align: center;
 	vertical-align: middle;
 	font-family: "NettoOT";
@@ -154,7 +158,7 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 	float: right;
 	min-height: 50px;
 	max-height: auto;
-	padding: 0px;
+	
 	background: #FFFFFF;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -188,4 +192,7 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 .smallWidth {
 	max-width: 10%;
 	text-align: center;
+}
+a.underline {
+	text-decoration: underline;
 }

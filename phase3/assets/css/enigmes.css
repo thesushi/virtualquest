@@ -108,46 +108,25 @@
     font-size: 6rem;
 }
 
-#e4_case, #e4_lettre {
+#e2_case, #e2_lettre {
     padding: 5px;
    
 }
-#e4_lettre div {
+#e2_lettre div {
     font-family: "NettoOT";
+    display: inline;
     font-size: 12px;
     margin-top: 1px;
     width: 100%;
     padding-bottom: 0;
-    border: 1px solid transparent;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    background: #EDEDED;
-    text-align: center;
-    color: #2F4F3F;
-    font-weight: bolder;
+
 }
-#e4_case div{
+#e2_case div{
     margin-top: 1px;
-    width: 100%;
+    display: inline;
+    width: 30%;
     padding-bottom: 0;
-    border: 1px solid #5F5F5F;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    background: #fff;
-    color: #2F4F3F;
 
-    text-align: center;
-    font-size: 12px;
-    font-weight: bolder;
-    -moz-box-shadow:    inset 0 0 5px #000000;
-    -webkit-box-shadow: inset 0 0 5px #000000;
-    box-shadow:         inset 0 0 5px #000000;
-}
-
-#e4_lettre div.bonneReponse {
-    background-color: lawngreen;
 }
 
 .tab_e2{
@@ -162,4 +141,17 @@ input[name="rep_e5"]{
 
 input[name="rep_6"]{
     margin-bottom: 20px;
+}
+
+.rightedModal {
+    position: relative;
+    float: right;
+    margin-bottom: 100px;
+
+}
+
+.leftedModal {
+    position: relative;
+    float: left;
+
 }

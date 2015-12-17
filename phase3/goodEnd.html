@@ -18,7 +18,7 @@
                     
                 </div>
                 <div class="grid_6 right">
-                    <a href="#" id="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
+                    <a href="#" class="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
                 </div>
             </div>           
         </header>
@@ -33,30 +33,23 @@
             
                 <div class="grid_5">
                     
-                        <p>Ta reussite te permet d'accéder finalement à l'ange pleureur, le patron des enfants orphelins.</p>
-                        <p>Cet ange triste symbolise le chagrin des orphelins dont la chanoine Guillan Lucas s'est occupé.</p>
-                        <p>Il se situe en haut de son mausolée comme tu peux le voir sur la photo</p>
+                        <p>Ta reussite te permet de connaitre la vérité sur Saint Honoré.</p>
+                        <p class="center"><img width ="50%" src="assets/img/sad.png"></p>
                 </div>
-                    <div class="grid_3">
-                        <img src="assets/img/tombeau.png" height="280">
+                    <div class="grid_6">
+                    <p>
+                        Les reliques de saint Honoré demeurèrent au lieu de sa mort jusqu'à l'invasion des Danois et des Normands.
+                        <br> Pour les préserver de toute profanation, elles furent, à cette époque, conduites à Amiens. Cette translation fut marquée par un nouveau miracle : le corps avait été déposé dans l'église Saint-Pierre et Saint-Paul. 
+                        <br><br>Lorsqu'on l'enleva, pour le porter à la cathédrale, le Crucifix, qui dominait le jubé, se pencha pour saluer la dépouille du Saint évêque et l'accompagna longuement du regard.<br> Ce Christ, à la tête inclinée, connu sous le nom de Saint Sauve, se voit encore dans la cathédrale d'Amiens dont le portail méridional, dit de la Vierge Dorée est, en partie, consacré à saint Honoré. <br>A Amiens, une église moderne provenant de l'exposition universelle de 1937 fut réédifiée après 1945 à l'emplacement de l'église détruite par les bombardements de la Seconde Guerre mondiale, elle est placée sous le vocable de Saint Honoré.</p>
                     </div>
-                    <div class="grid_3">
-                        <img src="assets/img/angePleureur.png" height="280">
-                    </div>
+                    
             
                 <div class="grid_12">
                 <br>
-                 <p>Ce mausolée de trouve dans la partie appelée déambulatoire</p>
-                </div>
-
-                <div class="grid_12">
-                <p><img src="assets/img/plan7.jpg"></p>
-                </div>
-                <div class="grid_12">
                 <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
                 </div>
                 <div class="grid_12">
-                <p>Tu peux rejouer et essayer de terminer le jeu plus vite</p>
+                <p>Tu peux <a  class="refreshReset underline" href="#"> rejouer </a>  et essayer de terminer le jeu plus vite</p>
                 </div>
             </div>
             
@@ -106,21 +99,21 @@
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
     <script type="text/javascript">
     
-        if(localStorage.getItem("virtualQuestPhase2-state") == "endFail" || localStorage.getItem("virtualQuestPhase2-state") == "endWin"){
-            if(localStorage.getItem("virtualQuestPhase2-state") == "endFail") {
+        if(localStorage.getItem("virtualQuestPhase3-state") == "endFail" || localStorage.getItem("virtualQuestPhase3-state") == "endWin"){
+            if(localStorage.getItem("virtualQuestPhase3-state") == "endFail") {
                 document.location.href="badEnd.html"
             }
         } else {
             document.location.href="index.html"
         }
 
-        $('#refreshReset').click(reset);
+        $('.refreshReset').click(reset);
         function reset() {
-            localStorage.removeItem("virtualQuestPhase2-enigme");
-            localStorage.removeItem("virtualQuestPhase2-state");
-            localStorage.removeItem("virtualQuestPhase2-indice");
-            localStorage.removeItem("virtualQuestPhase2-isStarted");
-            localStorage.removeItem("virtualQuestPhase2-stateFail");
+            localStorage.removeItem("virtualQuestPhase3-enigme");
+            localStorage.removeItem("virtualQuestPhase3-state");
+            localStorage.removeItem("virtualQuestPhase3-indice");
+            localStorage.removeItem("virtualQuestPhase3-isStarted");
+            localStorage.removeItem("virtualQuestPhase3-stateFail");
             document.location.href="index.html"
     }
     </script>

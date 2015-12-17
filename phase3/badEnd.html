@@ -18,7 +18,7 @@
                     
                 </div>
                 <div class="grid_6 right">
-                     <a href="#" id="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
+                     <a href="#" class="refreshReset"> <img class="uiButton" src="assets/img/refresh.png"> </a>
                     
                 </div>
             </div>           
@@ -29,12 +29,12 @@
 
             <!-- fin du jeu -->
     <div class="container_12 nettooT mediumSized">
-            <div class=' alternate big text-center'>Toutes nos félicitations !</div>
+            <div class=' alternate big text-center'>Dommage !</div>
             <div class="text-center">
-                <p>Tu as découvert la dernière partie de la cathédrale.</p>
-                <p><img src="assets/img/plan7.jpg"></p>
-                <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
-                <p>Mais tu n'as pas trouvé le secret ultime... Alors veux tu rejouer?</p>
+                <p>Tu n'as pas découvert le secret de St Honoré</p>
+                <p class="center"><img width="50%" src="assets/img/sad.png"></p>
+                <p>Tu n'as pas résolu toutes les énigmes. Essaye encore !</p>
+                <p><br>.. Alors veux tu <a  class="refreshReset2 underline" href="#"> rejouer </a> ? </p>
             </div>
             
         </div>
@@ -83,21 +83,21 @@
     <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
        <script type="text/javascript">
          
-        if(localStorage.getItem("virtualQuestPhase2-state") == "endFail" || localStorage.getItem("virtualQuestPhase2-state") == "endWin"){
-            if(localStorage.getItem("virtualQuestPhase2-state") == "endWin") {
+        if(localStorage.getItem("virtualQuestPhase3-state") == "endFail" || localStorage.getItem("virtualQuestPhase3-state") == "endWin"){
+            if(localStorage.getItem("virtualQuestPhase3-state") == "endWin") {
                 document.location.href="goodEnd.html"
             }
         } else {
             document.location.href="index.html"
         }
     
-        $('#refreshReset').click(reset);
+        $('.refreshReset').click(reset);
         function reset() {
-            localStorage.removeItem("virtualQuestPhase2-enigme");
-            localStorage.removeItem("virtualQuestPhase2-state");
-            localStorage.removeItem("virtualQuestPhase2-indice");
-             localStorage.removeItem("virtualQuestPhase2-isStarted");
-             localStorage.removeItem("virtualQuestPhase2-stateFail");
+            localStorage.removeItem("virtualQuestPhase3-enigme");
+            localStorage.removeItem("virtualQuestPhase3-state");
+            localStorage.removeItem("virtualQuestPhase3-indice");
+             localStorage.removeItem("virtualQuestPhase3-isStarted");
+             localStorage.removeItem("virtualQuestPhase3-stateFail");
              document.location.href="index.html"
 
     }
