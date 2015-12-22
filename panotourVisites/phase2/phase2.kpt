@@ -3,7 +3,7 @@
   <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="Nouveau projet" foregroundAlpha="255"/>
   <group x="22" y="120" thumbMode="False" objectId="39" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 39" foregroundAlpha="255"/>
-   <pano tourDirectory="_1_point1_30" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-88.19999999999979" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="30">
+   <pano tourDirectory="_1_point1_30" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-45" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="30">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="1_Point1" foregroundAlpha="255" filename="../photos/Final/1_Point1_str.JPG"/>
     <spot x="98.8462" y="39.3038" relativeX="0.692308" relativeY="0.590717" type="point" objectId="48">
      <description/>
@@ -47,7 +47,7 @@
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(1)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(3)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -56,7 +56,7 @@
   </group>
   <group x="355" y="60" thumbMode="False" objectId="40" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 40" foregroundAlpha="255"/>
-   <pano tourDirectory="_2_de_point1_vers_poi_31" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="176.8000000000001" phi="0" startYaw="177.21" dontGenerateTiles="false" startPitch="0" type="0" objectId="31">
+   <pano tourDirectory="_2_de_point1_vers_poi_31" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-158" phi="0" startYaw="177.21" dontGenerateTiles="false" startPitch="0" type="0" objectId="31">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="2_De_Point1_Vers_Point2_AND_5" foregroundAlpha="255" filename="../photos/Final/2_De_Point1_Vers_Point2_AND_5_str.JPG"/>
     <spot x="-1.35996" y="42.2166" relativeX="0.0242669" relativeY="0.629555" type="point" objectId="54">
      <description/>
@@ -247,7 +247,7 @@
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(2)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(5)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -300,7 +300,7 @@
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(5)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(1)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -328,13 +328,13 @@
   </group>
   <group x="623" y="55" thumbMode="False" objectId="44" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 44" foregroundAlpha="255"/>
-   <pano tourDirectory="_5_point_4_35" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="1.200000000000046" phi="0" startYaw="35.80291970802919" dontGenerateTiles="false" startPitch="-0.3284671532846716" type="0" objectId="35">
+   <pano tourDirectory="_5_point_4_35" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="45" phi="0" startYaw="35.80291970802919" dontGenerateTiles="false" startPitch="-0.3284671532846716" type="0" objectId="35">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="5_Point_4" foregroundAlpha="255" filename="../photos/Final/5_Point_4_str.JPG"/>
     <spot x="72.766" y="18.8924" relativeX="0.51844" relativeY="0.318565" type="point" objectId="60">
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(4)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(2)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -478,7 +478,7 @@
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(7)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(4)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -531,7 +531,7 @@
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(8)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+       <string needTranslation="true" default="debutEnigme(7)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
@@ -687,7 +687,7 @@
   </group>
   <group x="310.444" y="569" thumbMode="False" objectId="157" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 157" foregroundAlpha="255"/>
-   <pano tourDirectory="_10_point1_vers_point_156" x="244.444" y="605.556" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="102.2000000000001" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="156">
+   <pano tourDirectory="_10_point1_vers_point_156" x="244.444" y="605.556" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="112" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="156">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="10_Point1_Vers_Point3_B" foregroundAlpha="255" filename="../photos/Final/10_Point1_Vers_Point3_B_str.JPG"/>
     <spot x="139.692" y="36.751" relativeX="0.964611" relativeY="0.55668" type="point" objectId="159">
      <description/>
@@ -732,7 +732,7 @@
   </group>
   <group x="1025.67" y="632.667" thumbMode="False" objectId="170" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 170" foregroundAlpha="255"/>
-   <pano tourDirectory="_11_point3_169" x="1266.67" y="716.667" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-89.39999999999986" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="169">
+   <pano tourDirectory="_11_point3_169" x="1266.67" y="716.667" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-68" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="169">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="11_Point3" foregroundAlpha="255" filename="../photos/Final/11_Point3_str.JPG"/>
     <spot x="41.4104" y="37.2065" relativeX="0.309403" relativeY="0.562753" type="point" objectId="172">
      <description/>
@@ -772,18 +772,10 @@
       </action>
      </presetAction>
     </spot>
-    <spot x="69.0142" y="20.8098" relativeX="0.493428" relativeY="0.34413" type="point" objectId="180">
-     <description/>
-     <presetAction id="user_defaultpoint1">
-      <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(3)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
-      </action>
-     </presetAction>
-    </spot>
     <cropRectangle width="1" left="0" height="0.8545454545454545" top="0"/>
    </pano>
   </group>
-  <build headsetTour="false" baseDir="C:\Users\Thomas\Documents\Github\virtualquest\panotourVisites\phase2\test" imgJpegQuality="12" displayErrors="true" exportComments="true" htmlTemplate="generic.html" encryptConfig="false" html5Tour="true" desktopTour="true" mobilesTour="true" iBookTour="false" flashTour="false" filename="game" useMultiResolution="true"/>
+  <build headsetTour="false" baseDir="C:\Users\Thomas\Documents\Github\virtualquest\phase2" imgJpegQuality="12" displayErrors="true" exportComments="true" htmlTemplate="generic.html" encryptConfig="false" html5Tour="true" desktopTour="true" mobilesTour="true" iBookTour="false" flashTour="false" filename="game" useMultiResolution="true"/>
   <plugins>
    <plugin id="compass" name="Boussole" skin="200pixelslight">
     <param uiPreview="false" customize="false" id="position_group" name="tr:Position">

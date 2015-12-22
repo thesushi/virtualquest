@@ -9,6 +9,10 @@
 
 
 
+  <data name="en_pano38_title"><![CDATA[8_Point8]]></data>
+  <data name="en_spotpoint383javascriptcalljsfunctioncall"><![CDATA[debutEnigme(1)]]></data>
+
+
   <data name="en_pano30_title"><![CDATA[1_Point1]]></data>
   <data name="en_spotpoint255javascriptcalljsfunctioncall"><![CDATA[null]]></data>
 
@@ -34,10 +38,6 @@
 
   <data name="en_pano37_title"><![CDATA[7_Point 7]]></data>
   <data name="en_spotpoint371javascriptcalljsfunctioncall"><![CDATA[null]]></data>
-
-
-  <data name="en_pano38_title"><![CDATA[8_Point8]]></data>
-  <data name="en_spotpoint383javascriptcalljsfunctioncall"><![CDATA[debutEnigme(1)]]></data>
 
 
   <data name="en_pano78_title"><![CDATA[9_Point4_Vers_Point3]]></data>
