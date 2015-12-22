@@ -1,0 +1,4 @@
+<spots id="theme666" name="tr:VirtualQuestTemplate" version="1.0">
+  <spot url="out_sequence.png"   type="sequence" baseColor="#ffffff" name="tr:Direction OUT" frames="22" frameWidth="80" frameHeight="87" preferredActions="load"/>
+  <spot url="indice.png"   type="image" baseColor="#ffffff" name="tr:Indice"/>
+</spots>
