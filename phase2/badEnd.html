@@ -32,7 +32,7 @@
             <div class=' alternate big text-center'>Toutes nos félicitations !</div>
             <div class="text-center">
                 <p>Tu as découvert la dernière partie de la cathédrale.</p>
-                <p><img width="100%" src="assets/img/plan7.jpg"></p>
+                <p><center><img width="100%" src="assets/img/plan7.jpg"></p></center>
                 <p>Tu as résolu toutes les énigmes. Encore Bravo !</p>
                 <p>Mais tu n'as pas trouvé le secret ultime... Alors veux tu <a href="#" class="refreshReset underline">rejouer</a> ?</p>
             </div>
@@ -98,6 +98,7 @@
             localStorage.removeItem("virtualQuestPhase2-indice");
              localStorage.removeItem("virtualQuestPhase2-isStarted");
              localStorage.removeItem("virtualQuestPhase2-stateFail");
+             localStorage.removeItem("virtualQuestPhase2-enigmeChance");
              document.location.href="index.html"
 
     }

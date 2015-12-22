@@ -1,6 +1,11 @@
+.corps_e
+{
+    height: auto;
+}
 .lettre_e1{
     margin-top: 2px;
     margin-bottom:2px;
+    height : 70px;
 }
 .lettre_e1_case{
 	height : 70px;
@@ -101,11 +106,10 @@
 }
 
 #chances{
-    padding-left: 0px;
-    padding-top: 5%;
+    display: inline-block;
     color: red;
     font-weight: bolder;
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
 #e4_case, #e4_lettre {
@@ -152,8 +156,11 @@
 
 .tab_e2{
     text-align: center;
+    height: auto;
 }
-
+.tab_e2_letter {
+    height: 200px;
+}
 input[name="rep_e5"]{
     margin-top:20px;
     margin-bottom: 20px;
@@ -162,4 +169,15 @@ input[name="rep_e5"]{
 
 input[name="rep_6"]{
     margin-bottom: 20px;
+}
+.blocPendu {
+    height: 150px;
+}
+.countChanceLabel {
+    margin-top: 0px;
+    display: inline-block;
+}
+.countChanceLabel h3 {
+    margin-top: 0px;
+    display: inline-block;
 }

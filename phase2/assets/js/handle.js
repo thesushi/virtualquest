@@ -76,6 +76,7 @@ function reset() {
             localStorage.removeItem("virtualQuestPhase2-indice");
              localStorage.removeItem("virtualQuestPhase2-isStarted");
              localStorage.removeItem("virtualQuestPhase2-stateFail");
+             localStorage.removeItem("virtualQuestPhase2-enigmeChance");
              document.location.href="index.html"
 
     }
@@ -265,7 +266,6 @@ function enigme1() {
 function enigme2(){
     goToEnigme();
     var nbr=11;
-    $("#enigme2 .corps_e").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='tab_e2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/></span>");
     $("#talkbubble").html('<br>Il te reste 11 R à trouver.');
     $("#talkbubble").show();
     $(".enigmes .tab_e2 td").on('click',function(){
@@ -296,13 +296,6 @@ function enigme3() {
     var htmlEnigme = $("#enigme3 .corps_e");
     var nombreAnge = 3;
 
-    //Écriture de l'énigme <html> dans la div énigme
-    htmlEnigme
-        .html("<p class='col-md-12'>Pour résoudre cette énigme, dis-nous combien d'anges surplombent le portail <br/>À toi de jouer !<br/> <img class='text-center' src='assets/img/anges.png' width='60%'/></p> <div class='col-md-12'><input type='text' placeholder='Réponse' name='rep_e3' /> <button class='checkAnge'>Vérifier</button></div><div class='indication col-md-12ƒ'></div>"
-    );
-
-    //Click sur le bouton Vérifier
-    //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkAnge", function(){
         var reponseUser = $('input[name="rep_e3"]').val();
         if (reponseUser == nombreAnge) {
@@ -376,18 +369,6 @@ function enigme5(){
     goToEnigme();
     var response1='boulanger';
 
-    $("#enigme5 .corps_e")
-        .html("" +
-        "<p class='col-md-12 col-xs-12 col-sm-12'>Sauras-tu résoudre ce rébus pour trouver le quatrième indice ?</p>" +
-        "<p class='col-md-12'>À toi de jouer !</p>" +
-        "<div class='col-md-12 col-xs-12 col-sm-12'>"+
-        "<img class='col-md-4' src='assets/img/boule.png' alt='boule' />"+
-        "<img class='col-md-4' src='assets/img/ange.png' alt='ange' />"+
-        "<img class='col-md-4' src='assets/img/et.png' alt='et' />"+
-        "</div>"+
-        "<div class='inputRebus col-md-12 col-xs-12 col-sm-12'>"+
-        "<input type='text' placeholder='Réponse' name='rep_e5'/><button class='checkRebus'> Vérifier </button></div><div class='indication col-md-12'></div>");
-
     $(".enigmes").on('click', '.checkRebus', function(){
         var userResponse = $('input[name="rep_e5"]').val().toLowerCase();
         if (userResponse == response1){
@@ -411,20 +392,6 @@ function enigme6(){
     goToEnigme();
     var htmlEnigme = $("#enigme6 .corps_e");
 
-    htmlEnigme
-        .html(
-        "<p class='col-md-12 col-xs-12'>Pour résoudre cette énigme, trouve le nom commun à toutes les définitions :</p>" +
-        "<p class='col-md-12 col-xs-12'>" +
-        "1. Il est parfois synonyme de bonne santé <br/>" +
-        "2. Les personnes ayant bon cœur en sont qualifiés <br/>" +
-        "3. Valentin et Nicolas sont très connus <br/>" +
-        "4. Chaque jour le calendrier en célèbre un différent <br/>" +
-        "</p>" +
-        "<div class='col-md-12'>" +
-        "<input type='text' placeholder='Réponse' name='rep_6' /> <button class='checkEnigme6'>Vérifier</button>" +
-        "</div><div class='indication col-md-12'></div>"
-    );
-
     htmlEnigme.on('click', '.checkEnigme6', function(){
         var userResponse = $('input[name="rep_6"]').val().toLowerCase();
         if (userResponse == 'saint') {
@@ -447,6 +414,10 @@ function enigme7() {
 
     $("#modal8").modal("show");
     var chances = 3;
+    if (localStorage.getItem("virtualQuestPhase2-enigmeChance") !== null) {
+        chances = localStorage.getItem("virtualQuestPhase2-enigmeChance");
+        $('#chances').text(chances);
+    }
     var bonnesReponses = 0;
     var bonnesLettres = ['A', 'I', 'N', 'T', 'O', 'R', 'É'];
 
@@ -464,6 +435,7 @@ function enigme7() {
             $(event.target).hide();
         }else{
             chances--;
+            localStorage.setItem("virtualQuestPhase2-enigmeChance", chances);
             $('#chances').text(chances);
         }
 

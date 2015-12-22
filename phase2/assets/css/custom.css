@@ -98,6 +98,7 @@ img.half {
     border-radius: 2px;
     margin-left: 20px;
     padding: 5px;
+    height: auto;
    
 }
 .indiceBox {
