@@ -40,6 +40,11 @@ $( document ).ready(function() {
         $('.endButton').click(end);
         $('.resetLuzarches').click(resetLuzarches);
         $('.hideLuzarches').click(hideLuzarches);
+        $('.e4LuzarchesSet').click(e4LuzarchesSet);
+
+        if (localStorage.getItem("virtualQuestPhase3-enigme") == 5 ) {
+            hideLuzarches();
+         }
 
 
     });
@@ -270,6 +275,13 @@ $("#talkbubble").hide();
     });
 }
 
+function e4LuzarchesSet() {
+     $("#talkbubble").hide();
+     $("#talkbubble").html("");
+setLuzarches(1);
+    $('#luzarches').hide();
+}
+
 
 // direction sud est
 function enigme3() {
@@ -313,11 +325,12 @@ function enigme4(){
     $("#talkbubble").hide();
     var htmlEnigme = $("#enigme4 .corps_e");
     var repPos1 = "portail nord";
+    var repPos2 = "portail-nord";
     //Click sur le bouton Vérifier
     //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkRebus4", function(){
         var reponseUser = $('input[name="rep_e4"]').val();
-        if (reponseUser.toLowerCase() == repPos1) {
+        if (reponseUser.toLowerCase() == repPos1 || reponseUser.toLowerCase() == repPos2) {
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
             nouvelleEnigme(5,'showModal');
@@ -344,14 +357,14 @@ function enigme5(){
     htmlEnigme.on("click", ".checkRebus5", function(){
         var reponseUser = $('input[name="rep_e5"]').val();
         if (reponseUser.toLowerCase() == repPos1) {
-            
+            localStorage.setItem('virtualQuestPhase3-state', 'endWin');
             $('#scoreBtn').attr("src", 'assets/img/btn_points_5.png');
             setLuzarches(3);
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
             $("#modal6").modal("show");
             $("#modal6 .modal-body button").addClass("modalGagne");
-            localStorage.setItem('virtualQuestPhase3-state', 'endWin');
+            
         } else {
             $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
             $("#talkbubble").show();
@@ -360,7 +373,7 @@ function enigme5(){
             if (chances > 1) {
                 s = 's';
             }
-            $('#chanceLeft').text(chances + 'chance' + s);
+            $('#chanceLeft').text(chances + ' chance' + s);
             if (chances == 0) {
                 endFail();
             }
@@ -374,6 +387,7 @@ function enigme5(){
 function endFail() {
 
     localStorage.setItem('virtualQuestPhase3-stateFail', true);
+    localStorage.setItem('virtualQuestPhase3-state', 'endFail');
     $("#modal10").modal("show");
     $('.titreEnigme').html("Dommage ...");
     $('#enigme5 .corps_e').addClass('hidden');
