@@ -9,12 +9,15 @@ $( document ).ready(function() {
                end();
             }
             else if(localStorage.getItem("virtualQuestPhase2-state") == "chercher"){
+                $("#wrapper").show();
                 setLuzarches(1);
 
                 nouvelleEnigme(localStorage.getItem("virtualQuestPhase2-enigme"));
             }else{
+                $("#wrapper").show();
                 setLuzarches(2);
                 debutEnigme(localStorage.getItem("virtualQuestPhase2-enigme"));
+                goToEnigme();
             }
             $('#scoreBtn').attr("src", 'assets/img/btn_points_'+(localStorage.getItem("virtualQuestPhase2-enigme") - 1)+'.png');
 
@@ -22,6 +25,7 @@ $( document ).ready(function() {
 
         if (localStorage.getItem('virtualQuestPhase2-isStarted') == null) {
             //debut du  jeu
+            $("#wrapper").show();
              nouvelleEnigme(1, true);
              localStorage.setItem('virtualQuestPhase2-isStarted', true);
         }
@@ -29,7 +33,7 @@ $( document ).ready(function() {
         if(localStorage.getItem("virtualQuestPhase2-indice") !== null){
             setIndices(localStorage.getItem("virtualQuestPhase2-indice"));
         }
-        $("#wrapper").show();
+        
         $('#helpBtn').click(help);
         $('#refreshReset').click(reset);
         $('.endButton').click(end);
@@ -59,7 +63,12 @@ function setLuzarches(posture) {
 function help() {
     $("#modalHelp").modal("show");
 }
-
+function goToEnigme() {
+    
+    var id = $(".titreEnigme");
+    var offset = id.offset().top 
+    $('html, body').animate({scrollTop: offset}, 'slow'); 
+}
 
 function reset() {
              localStorage.removeItem("virtualQuestPhase2-enigme");
@@ -147,6 +156,7 @@ function reset() {
 
 // mot évéque mélangé
 function enigme1() {
+    goToEnigme();
     letter_cases = $(".lettre_e1_case_active");
     letter_cases.disableSelection();
     letter_cases.children().disableSelection();
@@ -253,6 +263,7 @@ function enigme1() {
 
 // les 11 R qui font 3
 function enigme2(){
+    goToEnigme();
     var nbr=11;
     $("#enigme2 .corps_e").html("<p class='col-md-12'>Pour résoudre cette énigme, clique sur tous les R qui se cachent parmis les B.</p><p class='col-md-12'>A toi de jouer !</p><div class='col-md-12 col-xs-12 col-sm-12'><table class='tab_e2 col-md-8 col-md-offset-2  col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2'><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td class='clickR'>R</td><td>B</td><td>B</td><td class='clickR'>R</td><td>B</td></tr><tr><td>B</td><td>B</td><td class='clickR'>R</td><td class='clickR'>R</td><td>B</td><td>B</td></tr><tr><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td><td>B</td></tr> </table></div><br/></span>");
     $("#talkbubble").html('<br>Il te reste 11 R à trouver.');
@@ -281,6 +292,7 @@ function enigme2(){
 
 // les 3 anges
 function enigme3() {
+    goToEnigme();
     var htmlEnigme = $("#enigme3 .corps_e");
     var nombreAnge = 3;
 
@@ -309,6 +321,7 @@ function enigme3() {
 
 //ordre des personnes (pain)
 function enigme4(){
+    goToEnigme();
     var nbCartes = 0;
     $(".dragIt").disableSelection();
 
@@ -360,6 +373,7 @@ function enigme4(){
 
 //Rébus boulanger
 function enigme5(){
+    goToEnigme();
     var response1='boulanger';
 
     $("#enigme5 .corps_e")
@@ -394,6 +408,7 @@ function enigme5(){
 
 // le mot saint
 function enigme6(){
+    goToEnigme();
     var htmlEnigme = $("#enigme6 .corps_e");
 
     htmlEnigme
@@ -427,7 +442,9 @@ function enigme6(){
 
 //saint honoré
 function enigme7() {
+    goToEnigme();
     if (localStorage.getItem('virtualQuestPhase2-stateFail') == null) {
+
     $("#modal8").modal("show");
     var chances = 3;
     var bonnesReponses = 0;
