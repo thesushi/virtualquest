@@ -9,6 +9,9 @@ $( document ).ready(function() {
                end();
             }
             else if(localStorage.getItem("virtualQuestPhase3-state") == "chercher"){
+                 if (localStorage.getItem("virtualQuestPhase3-enigme") == 5 ) {
+                     hideLuzarches();
+                }
                 setLuzarches(1);
 
                 nouvelleEnigme(localStorage.getItem("virtualQuestPhase3-enigme"));
@@ -40,11 +43,7 @@ $( document ).ready(function() {
         $('.endButton').click(end);
         $('.resetLuzarches').click(resetLuzarches);
         $('.hideLuzarches').click(hideLuzarches);
-        $('.e4LuzarchesSet').click(e4LuzarchesSet);
-
-        if (localStorage.getItem("virtualQuestPhase3-enigme") == 5 ) {
-            hideLuzarches();
-         }
+        $('.e4LuzarchesSet').click(e4LuzarchesSet);      
 
 
     });
@@ -62,7 +61,7 @@ function hideLuzarches() {
 function setLuzarchesSpeech() {
     switch (localStorage.getItem("virtualQuestPhase3-enigme")) {
         case '1':
-            luzarcheTalk(' Bonjour ! <br> Il faut que tu reviennes à la source de ton adventure...'); 
+            luzarcheTalk(' Bonjour ! <br> Il faut que tu reviennes à la source de ton aventure...'); 
             break;
         case '3':
             luzarcheTalk("Il faut qu'on retrouve la vrai vierge dorée ! <br> Mais où est elle ? Ma mémoire me fait défaut ...");
@@ -104,6 +103,7 @@ function reset() {
             localStorage.removeItem("virtualQuestPhase3-indice");
              localStorage.removeItem("virtualQuestPhase3-isStarted");
              localStorage.removeItem("virtualQuestPhase3-stateFail");
+            localStorage.removeItem('virtualQuestPhase3-enigme5Count');
              document.location.href="index.html"
 
     }
@@ -153,9 +153,6 @@ function reset() {
             $('#indices').text(indice);
             localStorage.setItem("virtualQuestPhase3-indice",indice);
         }
-        function startStep(number){
-            debutEnigme(number);
-        }
         function debutEnigme(number){
             if(localStorage.getItem("virtualQuestPhase3-enigme") == number){
                 setLuzarches(2);
@@ -190,9 +187,6 @@ function reset() {
                         break;
                     case '5':
                         enigme5();
-                        break;
-                    case '6':
-                        enigme6();
                         break;
                 }
             }
@@ -352,6 +346,14 @@ function enigme5(){
     var htmlEnigme = $("#enigme5 .corps_e");
     var repPos1 = "nourrice";
     var chances = 3;
+    if (localStorage.getItem("virtualQuestPhase3-enigme5Count") !== null) {
+        chances = localStorage.getItem("virtualQuestPhase3-enigme5Count");    
+            var s = '';
+            if (chances > 1) {
+                s = 's';
+            }
+            $('#chanceLeft').text(chances + ' chance' + s);
+    }
     //Click sur le bouton Vérifier
     //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkRebus5", function(){
@@ -369,7 +371,8 @@ function enigme5(){
             $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
             $("#talkbubble").show();
             chances--;
-            var s = '';
+            localStorage.setItem('virtualQuestPhase3-enigme5Count', chances);
+            s = '';
             if (chances > 1) {
                 s = 's';
             }
@@ -385,7 +388,7 @@ function enigme5(){
 
 //enigme saint-honoré v2
 function endFail() {
-
+    $("#talkbubble").html('<br>Oh non !<br><br>');
     localStorage.setItem('virtualQuestPhase3-stateFail', true);
     localStorage.setItem('virtualQuestPhase3-state', 'endFail');
     $("#modal10").modal("show");
