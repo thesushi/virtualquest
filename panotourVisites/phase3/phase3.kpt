@@ -1,6 +1,59 @@
 <panotour version="2.3.2.400">
- <project startSoundsON="true" startChangeCursor="true" workspaceOriginX="0" workspaceOriginY="103" startMouseType="moveto" startZoomOnCursor="false" startVolume="100" autorotationSpeed="5" startWithLittlePlanet="false" autorotationDelay="1" startTouchType="drag2d" autorotationDirection="right" workspaceScale="0.9" autotourMode="autotourModeFull" workspaceHeight="1123" startControlsHidden="false" hideControlsDuringIntroduction="true" relativePath="True" objectId="0" workspaceWidth="2201">
+ <project startSoundsON="true" startChangeCursor="true" workspaceOriginX="0" workspaceOriginY="0" startMouseType="moveto" startZoomOnCursor="false" startVolume="100" autorotationSpeed="5" startWithLittlePlanet="false" autorotationDelay="1" startTouchType="drag2d" autorotationDirection="right" workspaceScale="0.9" autotourMode="autotourModeFull" workspaceHeight="1123" startControlsHidden="false" hideControlsDuringIntroduction="true" relativePath="True" objectId="0" workspaceWidth="2201">
   <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="Nouveau projet" foregroundAlpha="255"/>
+  <group x="1536" y="44" thumbMode="False" objectId="47" explicit="False">
+   <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 47" foregroundAlpha="255"/>
+   <pano tourDirectory="_8_point8_38" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="3.60000000000025" phi="0" startYaw="-3.527737226277372" dontGenerateTiles="false" startPitch="25.62043795620438" type="0" objectId="38">
+    <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="8_Point8" foregroundAlpha="255" filename="../photos/Final/8_Point8.jpg"/>
+    <spot x="143.483" y="39.9393" relativeX="0.989889" relativeY="0.59919" type="point" objectId="72">
+     <description/>
+     <presetAction id="user_defaultpoint0">
+      <action startPitch="-11.75781584582441" targetId="37" category="basic" description="Aller à 7_Point 7" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="38" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="93.12280513918627">
+       <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
+        <item value="none" name="Aucun"/>
+        <item value="zoominonspot" name="Zoomer sur le point"/>
+        <item value="zoomoutonpanorama" name="Zoom -"/>
+       </select>
+       <select default="loadspotview" uiPreview="false" customize="true" id="targettransition" name="Transition de la cible">
+        <item value="none" name="Aucun"/>
+        <item value="spotviewtopanoview" name="Vue personnalisée à vue du panorama"/>
+        <item value="loadspotview" name="Chargement de la vue personnalisée"/>
+        <item value="loadpanoview" name="Charge de la vue du panorama"/>
+        <item value="panoviewtospotview" name="Vue du panorama vers vue personnalisée"/>
+       </select>
+      </action>
+     </presetAction>
+    </spot>
+    <spot x="111.936" y="39.1802" relativeX="0.779575" relativeY="0.589069" type="point" objectId="73">
+     <description/>
+     <presetAction id="user_defaultpoint0">
+      <action startPitch="-6.628467153284672" targetId="35" category="basic" description="Aller à 5_Point_4" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="38" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="81.70291970802919">
+       <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
+        <item value="none" name="Aucun"/>
+        <item value="zoominonspot" name="Zoomer sur le point"/>
+        <item value="zoomoutonpanorama" name="Zoom -"/>
+       </select>
+       <select default="loadspotview" uiPreview="false" customize="true" id="targettransition" name="Transition de la cible">
+        <item value="none" name="Aucun"/>
+        <item value="spotviewtopanoview" name="Vue personnalisée à vue du panorama"/>
+        <item value="loadspotview" name="Chargement de la vue personnalisée"/>
+        <item value="loadpanoview" name="Charge de la vue du panorama"/>
+        <item value="panoviewtospotview" name="Vue du panorama vers vue personnalisée"/>
+       </select>
+      </action>
+     </presetAction>
+    </spot>
+    <spot x="68.5592" y="44.9494" relativeX="0.490394" relativeY="0.665992" type="point" objectId="383">
+     <description/>
+     <presetAction id="user_defaultpoint1">
+      <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
+       <string needTranslation="true" default="debutEnigme(1)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+      </action>
+     </presetAction>
+    </spot>
+    <cropRectangle width="1" left="0" height="0.8863157894736842" top="0"/>
+   </pano>
+  </group>
   <group x="22" y="120" thumbMode="False" objectId="39" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 39" foregroundAlpha="255"/>
    <pano tourDirectory="_1_point1_30" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="-45" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="30">
@@ -350,7 +403,7 @@
     <spot x="28.8251" y="36.7722" relativeX="0.225501" relativeY="0.556962" type="point" objectId="74">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="3.12043795620438" targetId="38" category="basic" description="Aller à 8_Point8" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="35" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-2.627737226277372">
+      <action startPitch="25.62043795620438" targetId="38" category="basic" description="Aller à 8_Point8" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="35" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-3.527737226277372">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -481,7 +534,7 @@
     <spot x="32.3104" y="39.1802" relativeX="0.248736" relativeY="0.589069" type="point" objectId="70">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="3.12043795620438" targetId="38" category="basic" description="Aller à 8_Point8" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="37" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-2.627737226277372">
+      <action startPitch="25.62043795620438" targetId="38" category="basic" description="Aller à 8_Point8" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="37" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-3.527737226277372">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -539,59 +592,6 @@
      </presetAction>
     </spot>
     <cropRectangle width="1" left="0" height="0.8821052631578947" top="0"/>
-   </pano>
-  </group>
-  <group x="1536" y="44" thumbMode="False" objectId="47" explicit="False">
-   <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 47" foregroundAlpha="255"/>
-   <pano tourDirectory="_8_point8_38" x="497" y="44" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="3.60000000000025" phi="0" startYaw="-2.627737226277372" dontGenerateTiles="false" startPitch="3.12043795620438" type="0" objectId="38">
-    <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="8_Point8" foregroundAlpha="255" filename="../photos/Final/8_Point8.jpg"/>
-    <spot x="143.483" y="39.9393" relativeX="0.989889" relativeY="0.59919" type="point" objectId="72">
-     <description/>
-     <presetAction id="user_defaultpoint0">
-      <action startPitch="-11.75781584582441" targetId="37" category="basic" description="Aller à 7_Point 7" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="38" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="93.12280513918627">
-       <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
-        <item value="none" name="Aucun"/>
-        <item value="zoominonspot" name="Zoomer sur le point"/>
-        <item value="zoomoutonpanorama" name="Zoom -"/>
-       </select>
-       <select default="loadspotview" uiPreview="false" customize="true" id="targettransition" name="Transition de la cible">
-        <item value="none" name="Aucun"/>
-        <item value="spotviewtopanoview" name="Vue personnalisée à vue du panorama"/>
-        <item value="loadspotview" name="Chargement de la vue personnalisée"/>
-        <item value="loadpanoview" name="Charge de la vue du panorama"/>
-        <item value="panoviewtospotview" name="Vue du panorama vers vue personnalisée"/>
-       </select>
-      </action>
-     </presetAction>
-    </spot>
-    <spot x="111.936" y="39.1802" relativeX="0.779575" relativeY="0.589069" type="point" objectId="73">
-     <description/>
-     <presetAction id="user_defaultpoint0">
-      <action startPitch="-6.628467153284672" targetId="35" category="basic" description="Aller à 5_Point_4" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="38" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="81.70291970802919">
-       <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
-        <item value="none" name="Aucun"/>
-        <item value="zoominonspot" name="Zoomer sur le point"/>
-        <item value="zoomoutonpanorama" name="Zoom -"/>
-       </select>
-       <select default="loadspotview" uiPreview="false" customize="true" id="targettransition" name="Transition de la cible">
-        <item value="none" name="Aucun"/>
-        <item value="spotviewtopanoview" name="Vue personnalisée à vue du panorama"/>
-        <item value="loadspotview" name="Chargement de la vue personnalisée"/>
-        <item value="loadpanoview" name="Charge de la vue du panorama"/>
-        <item value="panoviewtospotview" name="Vue du panorama vers vue personnalisée"/>
-       </select>
-      </action>
-     </presetAction>
-    </spot>
-    <spot x="68.6564" y="31.076" relativeX="0.491043" relativeY="0.481013" type="point" objectId="383">
-     <description/>
-     <presetAction id="user_defaultpoint1">
-      <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(1)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
-      </action>
-     </presetAction>
-    </spot>
-    <cropRectangle width="1" left="0" height="0.8863157894736842" top="0"/>
    </pano>
   </group>
   <group x="1248.78" y="445" thumbMode="False" objectId="79" explicit="False">
@@ -811,7 +811,7 @@
   </group>
   <group x="154.444" y="804.444" thumbMode="False" objectId="368" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 368" foregroundAlpha="255"/>
-   <pano tourDirectory="phase3_portailsud_367" x="1604.44" y="504.444" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="0.1999999999999318" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="367">
+   <pano tourDirectory="phase3_portailsud_367" x="1604.44" y="504.444" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="45" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="367">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="Phase3_PortailSud" foregroundAlpha="255" filename="../photos/Final/Phase3_PortailSud_str.JPG"/>
     <spot x="62.7958" y="26.7308" relativeX="0.451972" relativeY="0.423077" type="point" objectId="369">
      <description/>
@@ -848,7 +848,7 @@
   </group>
   <group x="1545.89" y="649.889" thumbMode="False" objectId="377" explicit="False">
    <description backgroundAlpha="255" foregroundColor="#ffffff" backgroundColor="#808080" name="Groupe 377" foregroundAlpha="255"/>
-   <pano tourDirectory="phase3_portailprinci_376" x="1728.89" y="588.889" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="88.39999999999981" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="376">
+   <pano tourDirectory="phase3_portailprinci_376" x="1728.89" y="588.889" maxPixelZoom="true" planar="false" vFov="180" lowres="true" startFov="90" minFov="1" hFov="360" maxFov="90" heading="112" phi="0" startYaw="0" dontGenerateTiles="false" startPitch="0" type="0" objectId="376">
     <description backgroundAlpha="255" foregroundColor="#000000" backgroundColor="#ffffff" name="Phase3_PortailPrincipalOUEST" foregroundAlpha="255" filename="../photos/Final/Phase3_PortailPrincipalOUEST_str.JPG"/>
     <spot x="64.1608" y="27.0344" relativeX="0.461072" relativeY="0.427126" type="point" objectId="378">
      <description/>
@@ -912,7 +912,7 @@
     <cropRectangle width="1" left="0" height="0.8808080808080808" top="0"/>
    </pano>
   </group>
-  <build headsetTour="false" baseDir="C:\Users\Thomas\Documents\Github\virtualquest\panotourVisites\phase3\test" imgJpegQuality="12" displayErrors="true" exportComments="true" htmlTemplate="generic.html" encryptConfig="false" html5Tour="true" desktopTour="true" mobilesTour="true" iBookTour="false" flashTour="false" filename="game" useMultiResolution="true"/>
+  <build headsetTour="false" baseDir="C:\Users\Thomas\Documents\Github\virtualquest\phase3" imgJpegQuality="12" displayErrors="true" exportComments="true" htmlTemplate="generic.html" encryptConfig="false" html5Tour="true" desktopTour="true" mobilesTour="true" iBookTour="false" flashTour="false" filename="game" useMultiResolution="true"/>
   <plugins>
    <plugin id="compass" name="Boussole" skin="200pixelslight">
     <param uiPreview="false" customize="false" id="position_group" name="tr:Position">
