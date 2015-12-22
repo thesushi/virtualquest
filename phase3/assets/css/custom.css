@@ -22,10 +22,12 @@ body{
 	-ms-user-select: none;
 	user-select: none;
 	background: radial-gradient( #ffffe8, #ffe5bf);
+	width: 95%;
+	margin: 0 auto;
 }
 #wrapper {
 	border: 1px solid #82B49B;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 }
 .center {
 	text-align: center;
@@ -61,31 +63,35 @@ img.half {
 }
 .uiButton {
 	display: inline-block;
-    width: 10%;
+    max-width: 8%;
 }
 .left {
-	margin-top: 0px;
-	display: inline-block;
-	float: left;
-	left: 0;
-	text-align: left;
+	max-width: 50%;
+	margin-top: -15px;
+	top: 0px;
+	line-height: 1;
+	position: absolute;
+	margin-left: 15px;
 }
 .right {
 	display: inline-block;
 	float: right;
 	right: 0;
+	max-width: 50%;
 	text-align: right;
+	margin-right: -5px;
 }
 .panotour {
 	background-color: black;
-	height: 400px;
+	height: 40em;
 	margin-right: -5px;
+	width: 95%;
 }
 .margin_top_10 {
 	margin-top: 100px;
 }
 .enigmeBox {
-	width: 100%;
+	width: 95%;
 	border: 1px solid #82B49B;
 	min-height: 200px;
 	max-height: auto;
@@ -100,7 +106,7 @@ img.half {
 .indiceBox {
 	margin-top: 10px;
 	margin-bottom: 10px;
-	width: 100%;
+	width: 95%;
 	border: 1px solid #82B49B;
 	height: 100px;
 	background-color: #FFFFFF;
@@ -146,7 +152,7 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 	font-size: 18px;
 }
 #talkbubble 
-{	margin-top: 10%;
+{	
 	padding: 5px;
 	text-align: center;
 	vertical-align: middle;
@@ -158,6 +164,7 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 	float: right;
 	min-height: 50px;
 	max-height: auto;
+	margin-top: 30px;
 	
 	background: #FFFFFF;
 	-webkit-border-radius: 10px;
@@ -195,4 +202,59 @@ a.home:hover {text-decoration: underline; color: #2F4F3F;}
 }
 a.underline {
 	text-decoration: underline;
+}
+/**
+ * CSS MEDIA QUERIES 760px 
+ *
+ **/
+ @media screen and (min-width: 761px) and (max-width: 980px) {
+
+	#talkbubble 
+	{	
+		width: 120px;
+		
+		
+	}
+ }
+ @media screen and (max-width: 760px) {
+.margin_top_10 {
+	margin-top: 0px;
+}
+.enigmeBox {
+	margin-top: 10px;
+
+	min-height: 200px;
+	max-height: auto;
+
+    margin-left: 10px;
+    padding: 5px;
+   
+}
+.luzarchesBox {
+
+	margin-left: 0px;
+
+
+}
+.uiButton {
+    max-width: 15%;
+}
+.left {
+	margin-top: -15px;
+	top: 0px;
+	line-height: 1;
+	position: absolute;
+	margin-left: 1%;
+}
+.right {
+	margin-right: 1%;
+	}
+	.panotour {
+		margin-right: 0px;
+		height: 20em;
+	}
+	#wrapper {
+
+	margin-bottom: 10px;
+}
 }

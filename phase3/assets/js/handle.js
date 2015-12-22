@@ -2,13 +2,13 @@ $("#wrapper").hide();
 $( document ).ready(function() {
 
     $("#talkbubble").hide();
-
         if(localStorage.getItem("virtualQuestPhase3-enigme") !== null && localStorage.getItem("virtualQuestPhase3-state") !== null){
       
             if(localStorage.getItem("virtualQuestPhase3-state") == "endFail" || localStorage.getItem("virtualQuestPhase3-state") == "endWin"){
                end();
             }
             else if(localStorage.getItem("virtualQuestPhase3-state") == "chercher"){
+                $("#wrapper").show();
                  if (localStorage.getItem("virtualQuestPhase3-enigme") == 5 ) {
                      hideLuzarches();
                 }
@@ -16,8 +16,12 @@ $( document ).ready(function() {
 
                 nouvelleEnigme(localStorage.getItem("virtualQuestPhase3-enigme"));
             }else{
+                $("#wrapper").show();
                 setLuzarches(2);
                 debutEnigme(localStorage.getItem("virtualQuestPhase3-enigme"));
+
+                goToEnigme();
+                
             }
             var score = localStorage.getItem("virtualQuestPhase3-enigme") - 1;
             if (score == 34) {
@@ -29,7 +33,7 @@ $( document ).ready(function() {
 
         if (localStorage.getItem('virtualQuestPhase3-isStarted') == null) {
             //debut du  jeu
-
+            $("#wrapper").show();
              nouvelleEnigme(1, true);
              localStorage.setItem('virtualQuestPhase3-isStarted', true);
         }
@@ -37,13 +41,14 @@ $( document ).ready(function() {
         if(localStorage.getItem("virtualQuestPhase3-indice") !== null){
             setIndices(localStorage.getItem("virtualQuestPhase3-indice"));
         }
-        $("#wrapper").show();
+        
         $('#helpBtn').click(help);
         $('#refreshReset').click(reset);
         $('.endButton').click(end);
         $('.resetLuzarches').click(resetLuzarches);
         $('.hideLuzarches').click(hideLuzarches);
         $('.e4LuzarchesSet').click(e4LuzarchesSet);      
+
 
 
     });
@@ -191,10 +196,17 @@ function reset() {
                 }
             }
         }
+function goToEnigme() {
+    
+    var id = $(".titreEnigme");
+    var offset = id.offset().top 
+    $('html, body').animate({scrollTop: offset}, 'slow'); 
+}
 
 // mot crypté sud
 function enigme1() {
     $("#talkbubble").hide();
+    goToEnigme();
     var htmlEnigme = $("#enigme1 .corps_e");
     var reponseCode = "sud";
 
@@ -220,6 +232,7 @@ function enigme1() {
 function enigme2(){
 
 $("#talkbubble").hide();
+goToEnigme();
     var nbCartes = 0;
     $(".dragIt").disableSelection();
 
@@ -280,6 +293,7 @@ setLuzarches(1);
 // direction sud est
 function enigme3() {
     $("#talkbubble").hide();
+    goToEnigme();
     var htmlEnigme = $("#enigme3 .corps_e");
     var repPos1 = "sud-est";
     var repPos2 = "sud est";
@@ -317,6 +331,7 @@ function enigme35(){
 //rebus portail nord
 function enigme4(){
     $("#talkbubble").hide();
+    goToEnigme();
     var htmlEnigme = $("#enigme4 .corps_e");
     var repPos1 = "portail nord";
     var repPos2 = "portail-nord";
@@ -343,6 +358,7 @@ function enigme4(){
 function enigme5(){
     $('#luzarches').show();
     $("#talkbubble").hide();
+    goToEnigme();
     var htmlEnigme = $("#enigme5 .corps_e");
     var repPos1 = "nourrice";
     var chances = 3;
