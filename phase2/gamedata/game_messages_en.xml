@@ -10,7 +10,7 @@
 
 
   <data name="en_pano30_title"><![CDATA[1_Point1]]></data>
-  <data name="en_spotpoint176javascriptcalljsfunctioncall"><![CDATA[debutEnigme(1)]]></data>
+  <data name="en_spotpoint176javascriptcalljsfunctioncall"><![CDATA[debutEnigme(3)]]></data>
 
 
   <data name="en_pano31_title"><![CDATA[2_De_Point1_Vers_Point2_AND_5]]></data>
@@ -20,15 +20,15 @@
 
 
   <data name="en_pano33_title"><![CDATA[4_Point2]]></data>
-  <data name="en_spotpoint179javascriptcalljsfunctioncall"><![CDATA[debutEnigme(2)]]></data>
+  <data name="en_spotpoint179javascriptcalljsfunctioncall"><![CDATA[debutEnigme(5)]]></data>
 
 
   <data name="en_pano34_title"><![CDATA[5_Point2_AND_5_BIS]]></data>
-  <data name="en_spotpoint64javascriptcalljsfunctioncall"><![CDATA[debutEnigme(5)]]></data>
+  <data name="en_spotpoint64javascriptcalljsfunctioncall"><![CDATA[debutEnigme(1)]]></data>
 
 
   <data name="en_pano35_title"><![CDATA[5_Point_4]]></data>
-  <data name="en_spotpoint60javascriptcalljsfunctioncall"><![CDATA[debutEnigme(4)]]></data>
+  <data name="en_spotpoint60javascriptcalljsfunctioncall"><![CDATA[debutEnigme(2)]]></data>
 
 
   <data name="en_pano36_title"><![CDATA[6_Point6_AND_7]]></data>
@@ -36,11 +36,11 @@
 
 
   <data name="en_pano37_title"><![CDATA[7_Point 7]]></data>
-  <data name="en_spotpoint69javascriptcalljsfunctioncall"><![CDATA[debutEnigme(7)]]></data>
+  <data name="en_spotpoint69javascriptcalljsfunctioncall"><![CDATA[debutEnigme(4)]]></data>
 
 
   <data name="en_pano38_title"><![CDATA[8_Point8]]></data>
-  <data name="en_spotpoint71javascriptcalljsfunctioncall"><![CDATA[debutEnigme(8)]]></data>
+  <data name="en_spotpoint71javascriptcalljsfunctioncall"><![CDATA[debutEnigme(7)]]></data>
 
 
   <data name="en_pano78_title"><![CDATA[9_Point4_Vers_Point3]]></data>
@@ -53,7 +53,6 @@
 
 
   <data name="en_pano169_title"><![CDATA[11_Point3]]></data>
-  <data name="en_spotpoint180javascriptcalljsfunctioncall"><![CDATA[debutEnigme(3)]]></data>
 
 
 
