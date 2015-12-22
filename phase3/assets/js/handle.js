@@ -9,6 +9,9 @@ $( document ).ready(function() {
                end();
             }
             else if(localStorage.getItem("virtualQuestPhase3-state") == "chercher"){
+                 if (localStorage.getItem("virtualQuestPhase3-enigme") == 5 ) {
+                     hideLuzarches();
+                }
                 setLuzarches(1);
 
                 nouvelleEnigme(localStorage.getItem("virtualQuestPhase3-enigme"));
@@ -40,6 +43,7 @@ $( document ).ready(function() {
         $('.endButton').click(end);
         $('.resetLuzarches').click(resetLuzarches);
         $('.hideLuzarches').click(hideLuzarches);
+        $('.e4LuzarchesSet').click(e4LuzarchesSet);      
 
 
     });
@@ -57,7 +61,7 @@ function hideLuzarches() {
 function setLuzarchesSpeech() {
     switch (localStorage.getItem("virtualQuestPhase3-enigme")) {
         case '1':
-            luzarcheTalk(' Bonjour ! <br> Il faut que tu reviennes à la source de ton adventure...'); 
+            luzarcheTalk(' Bonjour ! <br> Il faut que tu reviennes à la source de ton aventure...'); 
             break;
         case '3':
             luzarcheTalk("Il faut qu'on retrouve la vrai vierge dorée ! <br> Mais où est elle ? Ma mémoire me fait défaut ...");
@@ -99,6 +103,7 @@ function reset() {
             localStorage.removeItem("virtualQuestPhase3-indice");
              localStorage.removeItem("virtualQuestPhase3-isStarted");
              localStorage.removeItem("virtualQuestPhase3-stateFail");
+            localStorage.removeItem('virtualQuestPhase3-enigme5Count');
              document.location.href="index.html"
 
     }
@@ -148,9 +153,6 @@ function reset() {
             $('#indices').text(indice);
             localStorage.setItem("virtualQuestPhase3-indice",indice);
         }
-        function startStep(number){
-            debutEnigme(number);
-        }
         function debutEnigme(number){
             if(localStorage.getItem("virtualQuestPhase3-enigme") == number){
                 setLuzarches(2);
@@ -185,9 +187,6 @@ function reset() {
                         break;
                     case '5':
                         enigme5();
-                        break;
-                    case '6':
-                        enigme6();
                         break;
                 }
             }
@@ -270,6 +269,13 @@ $("#talkbubble").hide();
     });
 }
 
+function e4LuzarchesSet() {
+     $("#talkbubble").hide();
+     $("#talkbubble").html("");
+setLuzarches(1);
+    $('#luzarches').hide();
+}
+
 
 // direction sud est
 function enigme3() {
@@ -313,11 +319,12 @@ function enigme4(){
     $("#talkbubble").hide();
     var htmlEnigme = $("#enigme4 .corps_e");
     var repPos1 = "portail nord";
+    var repPos2 = "portail-nord";
     //Click sur le bouton Vérifier
     //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkRebus4", function(){
         var reponseUser = $('input[name="rep_e4"]').val();
-        if (reponseUser.toLowerCase() == repPos1) {
+        if (reponseUser.toLowerCase() == repPos1 || reponseUser.toLowerCase() == repPos2) {
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
             nouvelleEnigme(5,'showModal');
@@ -339,28 +346,37 @@ function enigme5(){
     var htmlEnigme = $("#enigme5 .corps_e");
     var repPos1 = "nourrice";
     var chances = 3;
+    if (localStorage.getItem("virtualQuestPhase3-enigme5Count") !== null) {
+        chances = localStorage.getItem("virtualQuestPhase3-enigme5Count");    
+            var s = '';
+            if (chances > 1) {
+                s = 's';
+            }
+            $('#chanceLeft').text(chances + ' chance' + s);
+    }
     //Click sur le bouton Vérifier
     //Vérifie la réponse donnée
     htmlEnigme.on("click", ".checkRebus5", function(){
         var reponseUser = $('input[name="rep_e5"]').val();
         if (reponseUser.toLowerCase() == repPos1) {
-            
+            localStorage.setItem('virtualQuestPhase3-state', 'endWin');
             $('#scoreBtn').attr("src", 'assets/img/btn_points_5.png');
             setLuzarches(3);
             $("#talkbubble").html('<br> Bravo !');
             $("#talkbubble").show();
             $("#modal6").modal("show");
             $("#modal6 .modal-body button").addClass("modalGagne");
-            localStorage.setItem('virtualQuestPhase3-state', 'endWin');
+            
         } else {
             $("#talkbubble").html('<br>Ce n\'est pas la bonne réponse. Essaye encore ...<br><br>');
             $("#talkbubble").show();
             chances--;
-            var s = '';
+            localStorage.setItem('virtualQuestPhase3-enigme5Count', chances);
+            s = '';
             if (chances > 1) {
                 s = 's';
             }
-            $('#chanceLeft').text(chances + 'chance' + s);
+            $('#chanceLeft').text(chances + ' chance' + s);
             if (chances == 0) {
                 endFail();
             }
@@ -372,8 +388,9 @@ function enigme5(){
 
 //enigme saint-honoré v2
 function endFail() {
-
+    $("#talkbubble").html('<br>Oh non !<br><br>');
     localStorage.setItem('virtualQuestPhase3-stateFail', true);
+    localStorage.setItem('virtualQuestPhase3-state', 'endFail');
     $("#modal10").modal("show");
     $('.titreEnigme').html("Dommage ...");
     $('#enigme5 .corps_e').addClass('hidden');

@@ -73,9 +73,9 @@
                         N'oublie pas de cliquer sur le jeu pour pouvoir continuer à jouer.</p>
                     </div>
                     <div class="corps_e hidden">
-                        <div class="">
+                        <div class="enigme_text">
                             
-                            <p class="small">Un mystère reigne sur cette statue.</p>
+                            <p class="small">Un mystère reigne sur cette statue de la vierge à l'enfant.</p>
                             <p class="small">Remets ces cases dans l'ordre pour le découvrire ...</p>
                         </div>
 
@@ -240,7 +240,7 @@
                 <div class="modal-body">
                     <p>Tu as bien remis en ordre ces images. Cette statue est en effet une copie de la viere dorée.</p>
                     <p><center><img src="assets/img/fakevierge.jpg" /></center></p>
-                    <h3> Voici son histoire : <h3>
+                    <h3> Voici son histoire : </h3>
                     <p>La face antérieure du trumeau est occupée par la statue de la Vierge Dorée, magnifique chef-d'œuvre du xiiie siècle. Datée de 1288, haute de 2,30 m, la statue originale, menacée par les intempéries, a été transférée à l'intérieur de la cathédrale en 1980 et remplacée par un moulage. </p>
                     <br>
                     <p>Pour trouver la seconde partie de l'indice, tu dois revenir dans la cathédrale.</p>
@@ -287,7 +287,7 @@
                 </div>
                 <div class="modal-body">
                     <h2>Tu as retrouvé la vrai vierge dorée.</h2>
-                    <h3> Voici son histoire : <h3>
+                    <h3> Voici son histoire : </h3>
                     <p>
                     <br> La statue nous montre une Vierge couronnée et portant l'enfant Jésus, le regard posé vers lui avec douceur. La tête de la Vierge est surmontée d'un dais. Trois angelots souriants portaient son nimbe à l'origine.<br> Elle est légèrement hanchée, le poids du corps portant sur une seule jambe.</p>
                 
@@ -304,7 +304,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close e4LuzarchesSet" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -316,7 +316,7 @@
                     <p> Fais vite ! Luzarches t'attends ! </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default hideLuzarches" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="btn btn-default e4LuzarchesSet" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -327,7 +327,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close resetLuzarches" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close resetLuzarches endButton" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Félicitations</h4>
                 </div>
                 <div class="modal-body">
@@ -342,7 +342,7 @@
                     </p> 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continuer</button>
+                    <button type="button" class="endButton btn btn-default resetLuzarches" data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
@@ -353,20 +353,20 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="endButton close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Dommage,</h4>
                 </div>
                 <div class="modal-body">
                     <p>Tu n'as pas réussi à trouver le point clé du personnage de Saint Honoré. </p>
                     <p class="center">
-                    <img  src="assets/img/sad.png" />
+                    <img  width="50%" src="assets/img/sad.png" />
                     </p> 
                     <p>Mais tu peux recommencer ta partie pour connaitre ... La vérité ! </p>
                     
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class=" endButton btn btn-default " data-dismiss="modal">Continuer</button>
+                    <button type="button" class="endButton btn btn-default " data-dismiss="modal">Continuer</button>
                 </div>
             </div>
         </div>
