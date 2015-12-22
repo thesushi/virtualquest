@@ -2,9 +2,9 @@
 <krpano version="1.18.3">
 
     
-  <!-- Spot Style - Virtual Quest Spot Point -->
-  <style name="IconVirtualQuestSpotPoint"
-         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint1.png"
+  <!-- Spot Style - Default Point Spot Style 1 -->
+  <style name="IconDefaultPointSpotStyle1"
+         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint0.png"
          visible="false"
          frame="0"
          lastframe="15"
@@ -12,48 +12,14 @@
          frameheight="31"
          stopspotsequence="false"
          crop="0|0|88|31"
-         onloaded="startspotanimation(0.1);if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onloaded="startspotanimation(0.1);"
          rotate="270"
-         zoom="true"
-         
-         alpha="0.8"
-         onhover="onhoverIconVirtualQuestSpotPoint"
-         onover="onoverIconVirtualQuestSpotPoint"
-         onout="onoutIconVirtualQuestSpotPoint"
-         height="72"
-         width="72"
-         />
-  <action name="onhoverIconVirtualQuestSpotPoint">
-    showtooltip('hotspot');
-  </action>
-  <action name="onoverIconVirtualQuestSpotPoint">
-tween(scale, 1.2);
-tween(alpha, 1);
-
-  </action>
-  <action name="onoutIconVirtualQuestSpotPoint">
-    hideTooltip();
-tween(scale, 1);
-tween(alpha, 0.8);
-
-  </action>
-
-
-
-    
-  <!-- Spot Style - Default Point Spot Style 1 -->
-  <style name="IconDefaultPointSpotStyle1"
-         url="%FIRSTXML%/spots/treasure_user_defaultpoint0.png"
-         visible="false"
-         zoom="true"
-         
-         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
          alpha="0.8"
          onhover="onhoverIconDefaultPointSpotStyle1"
          onover="onoverIconDefaultPointSpotStyle1"
          onout="onoutIconDefaultPointSpotStyle1"
-         height="64"
-         width="64"
+         height="48"
+         width="32"
          />
   <action name="onhoverIconDefaultPointSpotStyle1">
     showtooltip('hotspot');
@@ -72,17 +38,46 @@ tween(alpha, 0.8);
 
 
 
+    
+  <!-- Spot Style - Default Point Spot Style 2 -->
+  <style name="IconDefaultPointSpotStyle2"
+         url="%FIRSTXML%/spots/indice_user_defaultpoint1.png"
+         visible="false"
+         alpha="0.8"
+         onhover="onhoverIconDefaultPointSpotStyle2"
+         onover="onoverIconDefaultPointSpotStyle2"
+         onout="onoutIconDefaultPointSpotStyle2"
+         height="60"
+         width="80"
+         />
+  <action name="onhoverIconDefaultPointSpotStyle2">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconDefaultPointSpotStyle2">
+tween(scale, 1.2);
+tween(alpha, 1);
+
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle2">
+    hideTooltip();
+tween(scale, 1);
+tween(alpha, 0.8);
+
+  </action>
+
+
+
   <!-- ******* -->
   <!-- Compass -->
   <!-- ******* -->
 
 
   <layer name="compassbackground"
-         url="%FIRSTXML%/graphics/compass/compassbgd77600.png"
+         url="%FIRSTXML%/graphics/compass/compassbgffc400.png"
          keep="true"
          handcursor="false"
          capture="false"
-         align="topleft"
+         align="bottomright"
          x="0"
          y="0"
          zorder="0"
@@ -95,7 +90,7 @@ tween(alpha, 0.8);
 
 
     <layer name="compasspointer"
-           url="%FIRSTXML%/graphics/compass/compasspointerb17135.png"
+           url="%FIRSTXML%/graphics/compass/compasspointerff0000.png"
            keep="true"
            align="center"
            handcursor="false"
