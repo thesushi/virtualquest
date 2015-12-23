@@ -125,9 +125,6 @@ function reset() {
             if(parseInt(number) > 1) {
              $('.titreEnigme').html('<p>Pour trouver la prochaine énigme :</p>');
             }
-            if (number == 7) {
-                $('.titreEnigme').html('<p>Pour trouver le personnage qui se cache derrière la vierge :</p>');
-            }
             localStorage.setItem('virtualQuestPhase3-enigme', number);
             localStorage.setItem('virtualQuestPhase3-state', 'chercher');
             
@@ -142,11 +139,8 @@ function reset() {
                 } else {
                     $('#enigme3'+' .corps_e').addClass('hidden');
                 }
-                if(parseInt(number) === 1)
-                    $('#enigme7 .corps_e').addClass('hidden');
             }       
-            setLuzarchesSpeech();
-        
+            setLuzarchesSpeech();        
         }
 
         function luzarcheTalk(talk) {
@@ -167,9 +161,6 @@ function reset() {
                 switch(number) {
                     case '3': 
                         $('.titreEnigme').html('<p>Bravo tu as trouvé la seconde partie de l\'énigme 2</p>');
-                        break;
-                    case '7':
-                        $('.titreEnigme').html('<p>Bravo tu as trouvé la dernière énigme </p>');
                         break;
                 }
                 $('#enigme'+number+' .info_e').addClass('hidden');
