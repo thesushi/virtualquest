@@ -2,29 +2,40 @@
 {
     height: auto;
 }
+.saintUl {
+    margin-left: -50px;
+}
 .lettre_e1{
-    margin-top: 2px;
+
+    left: 0px;
     margin-bottom:2px;
-    height : 70px;
+    height : 50px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+
 }
 .lettre_e1_case{
-	height : 70px;
+	height : 50px;
 	background: #969696;
     color: #000000;
     font-size: 40px;
     font-weight: bold;
     border : solid;
     border-width : 1px;
-	/* float : none; */
+ text-align: center;
+    vertical-align: middle
 }
 
 .lettre_e1_case_active{
-    height : 70px;
+    height : 50px;
     color: #000000;
     font-size: 40px;
     font-weight: bold;
     border : solid;
     border-width : 1px;
+ text-align: center;
+    vertical-align: middle
 }
 
 .enigme {
@@ -180,4 +191,32 @@ input[name="rep_6"]{
 .countChanceLabel h3 {
     margin-top: 0px;
     display: inline-block;
+}
+
+/**
+ * CSS MEDIA QUERIES 760px 
+ *
+ **/
+ @media screen and (min-width: 761px) and (max-width: 980px) {
+
+.lettre_e1{
+
+
+    height : 25px;
+
+
+}
+
+.lettre_e1_case{
+
+    font-size: 20px;
+height: 25px;
+
+}
+
+.lettre_e1_case_active{
+
+    font-size: 20px;
+height: 25px;
+
 }

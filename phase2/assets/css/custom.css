@@ -201,6 +201,9 @@ a.home:hover {text-decoration: underline; color: #6B4A15;}
 a.underline {
 	text-decoration: underline;
 }
+.lastMap {
+max-width: 70%;
+}
 /**
  * CSS MEDIA QUERIES 760px 
  *
@@ -210,11 +213,13 @@ a.underline {
 	#talkbubble 
 	{	
 		width: 120px;
-		
-		
 	}
+
  }
  @media screen and (max-width: 760px) {
+.lastMap {
+max-width: 90%;
+}
 .margin_top_10 {
 	margin-top: 0px;
 }
