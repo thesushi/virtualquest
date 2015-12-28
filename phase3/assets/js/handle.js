@@ -225,6 +225,7 @@ function enigme2(){
 $("#talkbubble").hide();
 goToEnigme();
     var nbCartes = 0;
+     var htmlEnigme = $("#enigme2 .corps_e");
     $(".dragIt").disableSelection();
 
     function handleCardDrop(event, ui ) {
@@ -245,13 +246,7 @@ goToEnigme();
             ui.draggable.draggable('option', 'revert', false);
             nbCartes++;
             $(this).removeClass('recepteur');
-            if(nbCartes===3){
-                $("#talkbubble").html('<br> Bravo !');
-                $("#talkbubble").show();
-                nouvelleEnigme(3,'showModal');
-                setIndices('SUD, Fausse statue');
-                $('#scoreBtn').attr("src", 'assets/img/btn_points_2.png');
-            }
+            
         }
         $("#e2_lettre").find("div").each(function() {
             if($(this).data("lettreActive") === emplacements){
@@ -260,8 +255,19 @@ goToEnigme();
                 $(this).removeData("lettreActive");
             }
         });
+         
     }
-
+    htmlEnigme.on("click", ".checkImg2", function(){
+            if(nbCartes===3){
+                $("#talkbubble").html('<br> Bravo !');
+                $("#talkbubble").show();
+                nouvelleEnigme(3,'showModal');
+                setIndices('SUD, Fausse statue');
+                $('#scoreBtn').attr("src", 'assets/img/btn_points_2.png');
+            } else {
+                 $("#talkbubble").html('<br>Tu n\'as pas résolu le mystère. Essaye encore ...<br><br>');
+                $("#talkbubble").show();
+            }  });
     $(".recepteur").droppable({
         drop: handleCardDrop
     });
