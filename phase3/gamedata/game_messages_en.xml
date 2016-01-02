@@ -18,6 +18,7 @@
 
 
   <data name="en_pano31_title"><![CDATA[2_De_Point1_Vers_Point2_AND_5]]></data>
+  <data name="en_spotpoint527javascriptcalljsfunctioncall"><![CDATA[debutEnigme(35)]]></data>
 
 
   <data name="en_pano32_title"><![CDATA[3_Point2_AND_5]]></data>
@@ -51,7 +52,6 @@
 
   <data name="en_pano169_title"><![CDATA[11_Point3]]></data>
   <data name="en_spotpoint384javascriptcalljsfunctioncall"><![CDATA[debutEnigme(4)]]></data>
-  <data name="en_spotpoint386javascriptcalljsfunctioncall"><![CDATA[debutEnigme(35)]]></data>
 
 
   <data name="en_pano367_title"><![CDATA[Phase3_PortailSud]]></data>

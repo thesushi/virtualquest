@@ -144,7 +144,7 @@
     <spot x="55.819" y="37.662" relativeX="0.40546" relativeY="0.568826" type="point" objectId="57">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="0" targetId="34" category="basic" description="Aller à 5_Point2_AND_5_BIS" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="32" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="0">
+      <action startPitch="1.35" targetId="34" category="basic" description="Aller à 5_Point2_AND_5_BIS" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="32" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-180">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -277,10 +277,10 @@
       </action>
      </presetAction>
     </spot>
-    <spot x="90.1528" y="34.8735" relativeX="0.634352" relativeY="0.531646" type="point" objectId="63">
+    <spot x="83.8776" y="35.6883" relativeX="0.592518" relativeY="0.54251" type="point" objectId="63">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="-13.05" targetId="32" category="basic" description="Aller à 3_Point2_AND_5" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="34" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-134.55">
+      <action startPitch="3.599999999999999" targetId="32" category="basic" description="Aller à 3_Point2_AND_5" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="34" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-165.6">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -398,7 +398,7 @@
     <spot x="131.249" y="39.3038" relativeX="0.908325" relativeY="0.590717" type="point" objectId="178">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="14.45255474452555" targetId="33" category="basic" description="Aller à 4_Point2" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="35" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="178.6861313868613">
+      <action startPitch="8.028947368421044" targetId="33" category="basic" description="Aller à 4_Point2" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="35" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-80.5138686131387">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>

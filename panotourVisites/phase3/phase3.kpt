@@ -43,7 +43,7 @@
       </action>
      </presetAction>
     </spot>
-    <spot x="68.5592" y="44.9494" relativeX="0.490394" relativeY="0.665992" type="point" objectId="383">
+    <spot x="68.5591" y="44.9494" relativeX="0.490394" relativeY="0.665992" type="point" objectId="383">
      <description/>
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
@@ -182,6 +182,14 @@
       </action>
      </presetAction>
     </spot>
+    <spot x="38.2255" y="20.2024" relativeX="0.28817" relativeY="0.336032" type="point" objectId="527">
+     <description/>
+     <presetAction id="user_defaultpoint1">
+      <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
+       <string needTranslation="true" default="debutEnigme(35)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
+      </action>
+     </presetAction>
+    </spot>
     <cropRectangle width="1" left="0" height="0.8357894736842105" top="0"/>
    </pano>
   </group>
@@ -211,7 +219,7 @@
     <spot x="55.819" y="37.662" relativeX="0.40546" relativeY="0.568826" type="point" objectId="57">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="0" targetId="34" category="basic" description="Aller à 5_Point2_AND_5_BIS" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="32" startFov="90" locked="False" customTargetView="False" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="0">
+      <action startPitch="3.15" targetId="34" category="basic" description="Aller à 5_Point2_AND_5_BIS" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="32" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="180">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -336,10 +344,10 @@
       </action>
      </presetAction>
     </spot>
-    <spot x="90.1528" y="34.8735" relativeX="0.634352" relativeY="0.531646" type="point" objectId="63">
+    <spot x="82.816" y="35.6883" relativeX="0.58544" relativeY="0.54251" type="point" objectId="63">
      <description/>
      <presetAction id="user_defaultpoint0">
-      <action startPitch="-13.05" targetId="32" category="basic" description="Aller à 3_Point2_AND_5" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="34" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-134.55">
+      <action startPitch="5.849999999999998" targetId="32" category="basic" description="Aller à 3_Point2_AND_5" callTemplate="loadpanoramaactioncall.tmpl" depends="" sourceId="34" startFov="90" locked="False" customTargetView="True" type="Object" id="object" name="Aller vers un panorama ou un groupe" internal="0" contentTemplate="" startYaw="-170.55">
        <select default="none" uiPreview="false" customize="true" id="sourcetransition" name="Transition de la source">
         <item value="none" name="Aucun"/>
         <item value="zoominonspot" name="Zoomer sur le point"/>
@@ -795,14 +803,6 @@
      <presetAction id="user_defaultpoint1">
       <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
        <string needTranslation="true" default="debutEnigme(4)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
-      </action>
-     </presetAction>
-    </spot>
-    <spot x="13.4932" y="33.1329" relativeX="0.123288" relativeY="0.508439" type="point" objectId="386">
-     <description/>
-     <presetAction id="user_defaultpoint1">
-      <action category="advanced" description="tr:Calls an external JavaScript function" callTemplate="javascriptcall.tmpl" depends="" locked="False" type="Plugin" id="javascriptcall" name="tr:Call a JavaScript function" internal="0" contentTemplate="">
-       <string needTranslation="true" default="debutEnigme(35)" uiPreview="false" customize="true" isCustomized="true" id="jsfunctioncall" name="tr:JavaScript call"/>
       </action>
      </presetAction>
     </spot>
