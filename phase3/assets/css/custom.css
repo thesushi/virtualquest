@@ -1,4 +1,4 @@
-@font-face {
+"@font-face {
     font-family: "MasonSansAlternate";
     src: url('../fonts/MasonSansAlternateBold.otf');
 }
@@ -83,7 +83,7 @@ img.half {
 }
 .panotour {
 	background-color: black;
-	height: 40em;
+	height: 58vh;
 	margin-right: -5px;
 	width: 95%;
 }
@@ -251,7 +251,7 @@ a.underline {
 	}
 	.panotour {
 		margin-right: 0px;
-		height: 20em;
+		height: 58vh;
 	}
 	#wrapper {
 

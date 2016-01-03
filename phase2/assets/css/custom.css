@@ -80,7 +80,7 @@ img.half {
 }
 .panotour {
 	background-color: black;
-	height: 40em;
+	height: 58vh;
 	margin-right: -5px;
 	width: 95%;
 }
@@ -254,7 +254,7 @@ max-width: 90%;
 	}
 	.panotour {
 		margin-right: 0px;
-		height: 20em;
+		height: 58vh;
 	}
 	#wrapper {
 
