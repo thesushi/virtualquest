@@ -427,7 +427,7 @@ function enigme7() {
     });
 
     $('.lettre_e7 .lettre').on('click', function(event) {
-        var lettreChoisie = event.target.innerText;
+        var lettreChoisie = $(this).text();
 
         if(bonnesLettres.indexOf(lettreChoisie) > -1){
             $('.pendu .'+lettreChoisie).text(lettreChoisie);
